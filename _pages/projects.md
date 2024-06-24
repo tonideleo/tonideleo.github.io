@@ -1,11 +1,11 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: Climbs
+permalink: /climbs/
+description: A growing collection of fun climbs with friends.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [Washington, California]
 horizontal: false
 ---
 
