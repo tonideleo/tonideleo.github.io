@@ -9,9 +9,9 @@ profile:
   image: toni_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Borned in Italy</p>
-    <p>Studied in Seattle WA</p>
-    <p>Living in San Diego CA</p>
+    <p>🤌 Borned in Italy 🤌</p>
+    <p>🧑‍🎓 Studied in Seattle WA 🧑‍🎓</p>
+    <p>😎 Living in San Diego CA 😎</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"

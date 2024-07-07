@@ -3,14 +3,14 @@
     "name": "Antonio Alessandro Deleo",
     "label": "Aerospace Engineer",
     "image": "",
-    "email": "a.deleo@me.com",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    // "email": "a.deleo@me.com",
+    // "phone": "(912) 123-4567",
+    "url": "https://tonideleo.github.io",
+    "summary": "A structural aerospace engineer in the field of computational fracture mechanics",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      // "address": "2712 Broadway St",
+      // "postalCode": "CA 94115",
+      "city": "San Diego",
       "countryCode": "US",
       "region": "California"
     },
@@ -24,37 +24,49 @@
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
+      "name": "ES3",
+      "location": "San Diego, California",
+      "position": "Structural Analysis Engineer (SME)",
+      "url": "https://www.es3inc.com",
+      "startDate": "2023-08-03",
+      // "endDate": "1955-01-01",
       "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "highlights": ["Subject Matter Expert"]
     }
   ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
+  // "volunteer": [
+  //   {
+  //     "organization": "People's Climate March",
+  //     "location": "Zurich, Switzerland",
+  //     "position": "Lead Organizer",
+  //     "url": "https://example.com",
+  //     "startDate": "2014-04-01",
+  //     "endDate": "2015-07-01",
+  //     "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+  //     "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+  //   }
+  // ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "University of Washington, Seattle, USA",
+      "location": "Seattle, WA",
+      "url": "https://www.aa.uw.edu/",
+      "area": "Composite Structures",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
+      "startDate": "2016-10-01",
+      "endDate": "2023-06-08",
+      "score": "3.95",
+      "courses": ["Theory of RelativityA"]
+    },
+    {
+      "institution": "University of Washington, Seattle, USA",
+      "location": "Seattle, WA",
+      "url": "https://www.aa.uw.edu/",
+      "area": "Composite Structures",
+      "studyType": "B.Sc.",
+      "startDate": "2016-10-01",
+      "endDate": "2023-06-08",
+      "score": "3.95",
       "courses": ["Theory of Relativity"]
     }
   ],
