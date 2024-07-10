@@ -30,8 +30,18 @@
       "url": "https://www.es3inc.com",
       "startDate": "2023-08-03",
       // "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Subject Matter Expert"]
+      "summary": "Subject Matter Expert in testing, manufacturing, and computational analysis of composite aerospace structures.",
+      "highlights": ["Subject Matter Expert","Manufacturing and Testing","Discrete Computational Modeling","Composite Aerospace Structures"]
+    },
+    {
+      "name": "University of Washington",
+      "location": "Seattle, Washington",
+      "position": "Research Assistant",
+      "url": "https://www.aa.uw.edu",
+      "startDate": "2016-10-01",
+      "endDate": "2023-06-30",
+      "summary": "Doctoral research assistant in MAMS Lab under the supervision of Prof. Marco Salviato",
+      "highlights": [""]
     }
   ],
   // "volunteer": [
@@ -103,39 +113,39 @@
   ],
   "certificates": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "name": "Google TensorFlow Developer",
+      "date": "2024-01-28",
+      "issuer": "Tensorflow",
+      "url": "https://www.credential.net/aa5283b3-aa7a-42f8-ab10-9f97b417ec16",
+      "icon": "fa-brands fa-google fa-2x"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "name": "Natural Language Processing in TensorFlow",
+      "date": "2023-02-23",
+      "issuer": "DeepLearning.AI",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/SVUVXY5H73Y5",
+      "icon": "ai ai-coursera-square ai-2x"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
+      "name": "Convolution Neural Network in TensorFlow",
+      "date": "2023-0220",
+      "issuer": "DeepLearning.AI",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/6H7ERVQGZXZA",
+      "icon": "ai ai-coursera-square ai-2x"
     },
     {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
+      "name": "Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning",
+      "date": "2023-02-17",
+      "issuer": "DeepLearning.AI",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/BEKPDT69H4KF",
+      "icon": "ai ai-coursera-square ai-2x"
     },
     {
       "name": "Quantum Communication",
       "date": "2018-01-01",
       "issuer": "Stanford University",
       "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
+      "icon": "fa fa-nvidia"
     },
     {
       "name": "Quantum Teleportation",
