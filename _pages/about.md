@@ -6,9 +6,10 @@ subtitle: Aerospace Structural Engineer @ <a href='https://www.es3inc.com'>ES3</
 
 profile:
   align: right
-  image: toni_pic.jpg
+  image: toni-SWrib.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
+    <p>📸 credit to <a href=/people/>Nicole</a></p>
     <p>🤌 Borned in Italy 🤌</p>
     <p>🧗 Studied in Seattle WA 🧗</p>
     <p>😎 Living in San Diego CA 😎</p>
