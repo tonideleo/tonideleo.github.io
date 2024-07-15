@@ -3,7 +3,7 @@
     "name": "Antonio Alessandro Deleo",
     "label": "Aerospace Engineer",
     "image": "",
-    // "email": "a.deleo@me.com",
+    "email": ["a.deleo@me.com", "Contact me"],
     // "phone": "(912) 123-4567",
     "url": "https://tonideleo.github.io",
     "summary": "A structural aerospace engineer in the field of computational fracture mechanics",
@@ -214,12 +214,12 @@
   ],
   "references": [
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
+      "name": "Prof. Marco Salviato",
+      "icon": "fa-solid fa-building-columns",
       "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     },
     {
-      "name": "Professor John Doe",
+      "name": "Prof. Eli Livne",
       "icon": "fa-solid fa-thumbtack",
       "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     }
