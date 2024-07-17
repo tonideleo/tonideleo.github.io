@@ -104,11 +104,25 @@
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "President Honors",
+      "date": "2012-01-01",
+      "awarder": "Cascadia College",
+      "url": "https://www.cascadia.edu/about/student-achievement/awards.aspx#:~:text=Students%20who%20have%20earned%20a,will%20be%20awarded%20President's%20Honors.&text=Students%20who%20have%20earned%20a%20quarterly%20college%20level%20GPA%20between,will%20be%20awarded%20Faculty%20Honors.",
+      "summary": "From 2012 to 2014. Students who have earned a quarterly college level GPA of 3.9 or higher will be awarded President's Honors."
+    },
+    {
+      "title": "Valedictorian",
+      "date": "2015-08-01",
+      "awarder": "GEA Aviation Program - ENAC - ISAE/Supaero",
+      "url": "https://groupe-isae.fr/en/enac",
+      "summary": "Ended first of the class in the aviation summer program offered in Tolouse at ENAC and ISAE Supaero."
+    },
+    {
+      "title": "Robert Reynolds Scholarships",
+      "date": "2015-05-01",
+      "awarder": "University of Washington Seattle",
+      "url": "https://uw.aa.edu",
+      "summary": "TODO"
     }
   ],
   "certificates": [
@@ -184,7 +198,84 @@
         "Quantum Communication",
         "Quantum Teleportation"
       ]
+    },
+    {
+      "name": "Programming",
+      "level": "Master",
+      "icon": "fa-solid fa-laptop",
+      "keywords": [
+        "C++",
+        "CUDA",
+        "Matlab",
+        "Python",
+        "\\( \\LaTeX\\)",
+        "Bash",
+        "Fortran"
+      ]
+    },
+    {
+      "name": "FEM",
+      "level": "Master",
+      "icon": "fa-solid fa-laptop",
+      "keywords": [
+        "MARS Solver",
+        "Abaqus",
+        "Femap",
+        "LS-Dyna",
+        "Nasgro",
+        "Afgrow",
+        "Hyperworks",
+        "Ansys"
+      ]
+    },
+    {
+      "name": "Composite Manufacturing",
+      "level": "Master",
+      "icon": "fa-solid fa-laptop",
+      "keywords": [
+        "Manual Layup",
+        "Autoclave",
+        "VARTM",
+        "Molding",
+        "Hot-press",
+        "3D Printing"
+      ]
+    },
+    {
+      "name": "Database",
+      "level": "Master",
+      "icon": "fa-solid fa-laptop",
+      "keywords": [
+        "SQLite",
+        "MySQL",
+        "PostGreSQL"
+      ]
+    },
+    {
+      "name": "Software Management",
+      "level": "Master",
+      "icon": "fa-solid fa-laptop",
+      "keywords": [
+        "Git",
+        "GitKraken",
+        "Apptainer",
+        "Singularity",
+        "Docker"
+      ]
+    },
+    {
+      "name": "Photography",
+      "level": "Master",
+      "icon": "fa-solid fa-laptop",
+      "keywords": [
+        "Illustrator",
+        "Inkscape",
+        "darktable",
+        "Photoshop",
+        "Lightroom"
+      ]
     }
+
   ],
   "languages": [
     {
