@@ -21,6 +21,10 @@
     {% include header.liquid %}
 
     <!-- Content -->
+    <div id="background-div">
+      <div id="particles-js"></div>
+      <script src="assets/js/particles.js"></script>
+    </div>
     <div class="container mt-5" role="main">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
@@ -45,6 +49,7 @@
       {% else %}
         {{ content }}
       {% endif %}
+    </div>
     </div>
 
     <!-- Footer -->
