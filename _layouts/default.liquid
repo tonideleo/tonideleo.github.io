@@ -15,40 +15,18 @@
     {% endif %}
     {% include head.liquid %}
   </head>
-  
+
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
     <!-- Header -->
     {% include header.liquid %}
-    <!-- count particles -->
-    <div class="count-particles">
-      <span class="js-count-particles">--</span> particles
-    </div>
     <!-- particles.js container -->
     <div id="particles-js"></div>
     <script src="/assets/js/particles.js"></script>
-    <!-- stats.js -->
-    <script src="assets/js/stats.js"></script>
-    <script>
-      var count_particles, stats, update;
-      stats = new Stats;
-      stats.setMode(0);
-      stats.domElement.style.position = 'absolute';
-      stats.domElement.style.left = '0px';
-      stats.domElement.style.top = '80px';
-      document.body.appendChild(stats.domElement);
-      count_particles = document.querySelector('.js-count-particles');
-      update = function() {
-        stats.begin();
-        stats.end();
-        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-        }
-        requestAnimationFrame(update);
-      };
-      requestAnimationFrame(update);
-    </script>
+    <script src="/assets/js/particle-call-function.js"></script>
+    
+
     <!-- Content -->
     <div class="container mt-5" role="main">
       {% if page.toc and page.toc.sidebar %}
