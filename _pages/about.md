@@ -29,10 +29,6 @@ And oh, that ex-girlfriend is now my wife ([#technically-the-truth](https://www.
 
 In the last two years of my Ph.D I started working with ES3, developing cutting edge computational discrete models for composites. After graduating I was offered an amazing position at the company at the headquarter in San Diego. We moved in the 2023 Fall and currently enjoying the best weather and climate anyone can ask for. If you ever come vist, reach out and we'll bring you around!
 
-<div id="particles-js"></div>
-
-<script src="assets/js/particles.js"></script>
-
 <!-- SEAN!!!. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.

@@ -200,13 +200,11 @@ ul.task-list input[type="checkbox"] {
 .profile.float-right {
   position: relative;
   margin-left: 1rem;
-  z-index: 100;
 }
 
 .profile.float-left {
   position: relative;
   margin-right: 1rem;
-  z-index: 100;
 }
 
 @media (min-width: 576px) {
