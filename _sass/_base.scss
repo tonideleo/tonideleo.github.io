@@ -542,18 +542,49 @@ footer.sticky-bottom {
   }
 }
 
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(50deg); }
+ 95% { transform: rotate(-50deg); }
+100% { transform: rotate(0deg); }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-0.25px, 0, 0); }
+  20%, 80% { transform: translate3d(0.5px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-1px, 0, 0); }
+  40%, 60% { transform: translate3d(1px, 0, 0); }
+}
+
+a:hover, a:focus {
+  // color: #ff1303;
+  // animation: wiggle 2.5s infinite;
+  // font-size: 110%;
+  animation: shake 0.75s cubic-bezier(.36,.07,.19,.97) both;
+  // transform: scale(1.1);
+  // transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
 }
-
+.post-title:hover {
+  transform: scale(1.05);
+}
 .post-title {
   overflow: hidden;
   // border-right: .15em solid orange;
   white-space: nowrap;
   // font-size: 1.6rem;
   width: 0;
-  animation: fadeInRight 1s ease-out, typing 3s forwards;
+  animation: fadeInRight 1s ease-in-out, typing 3s forwards ;
+  transition: transform 330ms ease-in-out;
+  transform-origin: 0% 50%;
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
