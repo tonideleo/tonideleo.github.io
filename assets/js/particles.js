@@ -187,7 +187,7 @@ var pJS = function(tag_id, params){
   pJS.fn.canvasInit = function(){
     pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
   };
-
+  let timeoutId;
   pJS.fn.canvasSize = function(){
 
     pJS.canvas.el.width = pJS.canvas.w;
@@ -196,29 +196,32 @@ var pJS = function(tag_id, params){
     if(pJS && pJS.interactivity.events.resize){
 
       window.addEventListener('resize', function(){
+          clearTimeout(timeoutId)
+          timeoutId = setTimeout(() => {
+            pJS.fn.particlesRefresh();
+          }, 100)
+        //   pJS.canvas.w = pJS.canvas.el.offsetWidth;
+        //   pJS.canvas.h = pJS.canvas.el.offsetHeight;
 
-          pJS.canvas.w = pJS.canvas.el.offsetWidth;
-          pJS.canvas.h = pJS.canvas.el.offsetHeight;
+        //   /* resize canvas */
+        //   if(pJS.tmp.retina){
+        //     pJS.canvas.w *= pJS.canvas.pxratio;
+        //     pJS.canvas.h *= pJS.canvas.pxratio;
+        //   }
 
-          /* resize canvas */
-          if(pJS.tmp.retina){
-            pJS.canvas.w *= pJS.canvas.pxratio;
-            pJS.canvas.h *= pJS.canvas.pxratio;
-          }
+        //   pJS.canvas.el.width = pJS.canvas.w;
+        //   pJS.canvas.el.height = pJS.canvas.h;
 
-          pJS.canvas.el.width = pJS.canvas.w;
-          pJS.canvas.el.height = pJS.canvas.h;
+        //   /* repaint canvas on anim disabled */
+        //   if(!pJS.particles.move.enable){
+        //     pJS.fn.particlesEmpty();
+        //     pJS.fn.particlesCreate();
+        //     pJS.fn.particlesDraw();
+        //     pJS.fn.vendors.densityAutoParticles();
+        //   }
 
-          /* repaint canvas on anim disabled */
-          if(!pJS.particles.move.enable){
-            pJS.fn.particlesEmpty();
-            pJS.fn.particlesCreate();
-            pJS.fn.particlesDraw();
-            pJS.fn.vendors.densityAutoParticles();
-          }
-
-        /* density particles enabled */
-        pJS.fn.vendors.densityAutoParticles();
+        // /* density particles enabled */
+        // pJS.fn.vendors.densityAutoParticles();
 
       });
 
