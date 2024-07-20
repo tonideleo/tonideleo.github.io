@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 0.35,
       "direction": "none",
       "random": false,
       "straight": false,
@@ -84,7 +84,7 @@
       "grab": {
         "distance": 150,
         "line_linked": {
-          "opacity": 1
+          "opacity": 0.5
         }
       },
       "bubble": {
@@ -95,8 +95,8 @@
         "speed": 3
       },
       "repulse": {
-        "distance": 63.86715631486508,
-        "duration": 0.4
+        "distance": 75,
+        "duration": 5
       },
       "push": {
         "particles_nb": 4

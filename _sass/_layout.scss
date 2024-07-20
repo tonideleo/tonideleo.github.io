@@ -17,43 +17,21 @@ body {
   }
 }
 
-/* ---- stats.js ---- */
-
-.count-particles{
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.js-count-particles{
-  font-size: 1.1em;
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-#stats,
-.count-particles{
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-
-.count-particles{
-  border-radius: 0 0 3px 3px;
-}
 
 #particles-js {
   position: fixed;
@@ -65,6 +43,7 @@ body {
   background-size: cover;
   background-position: 50% 50%;
   z-index: -10;
+  animation: fadein 3s ease-in;
 }
 
 
