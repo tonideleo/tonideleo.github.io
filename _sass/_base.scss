@@ -239,7 +239,7 @@ ul.task-list input[type="checkbox"] {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  opacity: 0.8;
 }
 
 .navbar .dropdown-menu {
@@ -532,10 +532,32 @@ footer.sticky-bottom {
   }
 }
 
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
 .post-title {
+  overflow: hidden;
+  // border-right: .15em solid orange;
+  white-space: nowrap;
+  // font-size: 1.6rem;
+  width: 0;
+  animation: fadeInRight 1s ease-out, typing 3s forwards;
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
+
 }
 
 .post-list {
