@@ -5,8 +5,14 @@ let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
   if (themeSetting == "system") {
     setThemeSetting("light");
+    pJSDom[0].pJS.particles.color.value = '#000000';
+    pJSDom[0].pJS.particles.line_linked.color = '#000000';
+    pJSDom[0].pJS.fn.particlesRefresh();
   } else if (themeSetting == "light") {
     setThemeSetting("dark");
+    pJSDom[0].pJS.particles.color.value = '#ffffff';
+    pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
+    pJSDom[0].pJS.fn.particlesRefresh();
   } else {
     setThemeSetting("system");
   }
