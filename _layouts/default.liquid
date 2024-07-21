@@ -25,7 +25,28 @@
     <div id="particles-js"></div>
     <script src="/assets/js/particles.js"></script>
     <script src="/assets/js/particle-call-function.js"></script>
-    
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-parallax-js/5.6.2/simpleParallax.js" integrity="sha512-gbbpFS1amYeHZT44HIou1MbN9b6gmRvyBdisWdE+d/GNn1aEVbUvbnOw1Jh+nW9N5+hd3d1trhhVf0ycE5LJeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
+     <script src="/assets/js/simpleParallax.js"></script>
+     <script>
+
+     document.addEventListener('DOMContentLoaded', function() {
+         var images = document.querySelectorAll('[class^="img"]');
+         images.forEach(function(img) {
+             console.log(img);
+             // You can apply the Simple Parallax effect or any other logic here
+             new simpleParallax(img, {
+               scale: 2
+             });
+         });
+     });
+ 
+ 
+       // var image = document.getElementsByClassName('img');
+       // new simpleParallax(image, {
+       //     scale: 2
+       // });
+       </script>
+
 
     <!-- Content -->
     <div class="container mt-5" role="main">
