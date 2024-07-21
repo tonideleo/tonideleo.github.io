@@ -187,7 +187,13 @@ var pJS = function(tag_id, params){
   pJS.fn.canvasInit = function(){
     pJS.canvas.ctx = pJS.canvas.el.getContext('2d');
   };
+
+ 
   let timeoutId;
+  let prevWidth = window.innerWidth;
+  let prevHeight = window.innerHeight;
+  
+
   pJS.fn.canvasSize = function(){
 
     pJS.canvas.el.width = pJS.canvas.w;
@@ -198,7 +204,13 @@ var pJS = function(tag_id, params){
       window.addEventListener('resize', function(){
           clearTimeout(timeoutId)
           timeoutId = setTimeout(() => {
-            pJS.fn.particlesRefresh();
+            let currentWidth = window.innerWidth;
+            let currentHeight = window.innerHeight;
+            if (currentWidth !== prevWidth && currentHeight !== prevHeight) {
+              pJS.fn.particlesRefresh();
+            }
+            prevWidth = currentWidth;
+            prevHeight = currentHeight;
           }, 100)
         //   pJS.canvas.w = pJS.canvas.el.offsetWidth;
         //   pJS.canvas.h = pJS.canvas.el.offsetHeight;
