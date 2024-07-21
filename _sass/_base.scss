@@ -721,8 +721,8 @@ a:hover, a:focus {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
-    border-top: 1px solid var(--global-divider-color);
+    color: var(--global-text-color);
+    border-top: 2px solid var(--global-text-color);
     padding-top: 1rem;
     margin-top: 2rem;
     text-align: right;
@@ -737,7 +737,7 @@ a:hover, a:focus {
       margin-bottom: 1rem;
 
       .preview {
-        image-resolution: from-image 300dpi;
+        image-resolution: from-image 400dpi;
       }
 
       .abbr {
