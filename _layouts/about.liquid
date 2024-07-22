@@ -34,6 +34,28 @@ layout: default
         {% endif %}
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
+        {% else %}
+          <div class="typed-info"></div>
+          <script>
+            var options = {
+              strings: [
+                "🤌 Borned in Italy 🤌",
+                "✈️ Studied in Seattle WA ✈️",
+                "😎 Living in San Diego CA 😎",
+                "🧗 Love Climbing 🧗",
+                "🎵 Play Classical Music 🎵"
+              ],
+              typeSpeed: 30,
+              backSpeed: 20,
+              loop: true,
+              shuffle: true,
+              showCursor: true,
+              cursorChar: '|',
+              // fadeOut: true,
+            };
+          
+            var typed = new Typed(".typed-info", options);
+          </script>
         {% endif %}
       </div>
     {% endif %}
