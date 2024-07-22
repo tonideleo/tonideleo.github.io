@@ -3,6 +3,39 @@
 
   <!-- Head -->
   <head>
+    <!-- Simple Parallax JS -->
+    {% if site.simple_parallax_js %}
+      {% if site.simple_parallax_js == true %}
+        {% comment %} <script defer src="https://cdnjs.cloudflare.com/ajax/libs/simple-parallax-js/5.6.2/simpleParallax.js" integrity="sha512-gbbpFS1amYeHZT44HIou1MbN9b6gmRvyBdisWdE+d/GNn1aEVbUvbnOw1Jh+nW9N5+hd3d1trhhVf0ycE5LJeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
+        <script type="module" src={{ '/assets/js/simpleParallax.js' | relative_url }}></script>
+        <style>
+          img[class^="img"] {
+            visibility: hidden;
+            transform: scale(1.2); /* Ensure images are scaled initially */
+            transition: transform 0s;
+          }
+        </style>
+        <script defer>
+          document.addEventListener('DOMContentLoaded', function() {
+            var images = document.querySelectorAll('[class^="img"]');
+            images.forEach(function(img) {
+              img.addEventListener('load', function() {
+                img.style.visibility = 'visible';
+                new simpleParallax(img, {
+                  delay: 3,
+                  scale: 1.3,
+                  transition: 'cubic-bezier(0,0,0,1)'
+                });
+              });
+              if (img.complete) {
+                img.dispatchEvent(new Event('load'));
+              }
+            });
+          });
+        </script>
+      {% endif %}
+    {% endif %}
+
     {% if page.redirect %}
       {% if page.redirect == true %}
         {% assign redirect = site.baseurl | append: '/' %}
@@ -19,13 +52,17 @@
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
+    <!-- Particle JS -->
+    {% if site.particle_js %}
+      {% if site.particle_js == true %}
+        <script src={{ '/assets/js/particles.js' | relative_url }}></script>
+        <script src={{ '/assets/js/particle-call-function.js' | relative_url }}></script>
+        <div id="particles-js"></div>
+      {% endif %}
+    {% endif %}
+
     <!-- Header -->
     {% include header.liquid %}
-    <!-- particles.js container -->
-    <div id="particles-js"></div>
-    <script src="/assets/js/particles.js"></script>
-    <script src="/assets/js/particle-call-function.js"></script>
-    
 
     <!-- Content -->
     <div class="container mt-5" role="main">
