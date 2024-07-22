@@ -17,15 +17,6 @@ layout: default
 
   <article>
     {% if page.profile %}
-      <div class="thumbnail"> 
-        <img class="thumbnail" src= "/assets/img/1.jpg" alt="Thumbnail Image"> 
-        <script>
-          var image = document.getElementsByClassName('thumbnail');
-          new simpleParallax(image, {
-              scale: 2
-          });
-          </script>
-    </div> 
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
@@ -46,25 +37,6 @@ layout: default
         {% endif %}
       </div>
     {% endif %}
-    <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var images = document.querySelectorAll('[class^="img"]');
-        images.forEach(function(img) {
-            console.log(img);
-            // You can apply the Simple Parallax effect or any other logic here
-            new simpleParallax(img, {
-              scale: 2
-            });
-        });
-    });
-
-
-      // var image = document.getElementsByClassName('img');
-      // new simpleParallax(image, {
-      //     scale: 2
-      // });
-      </script>
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->
