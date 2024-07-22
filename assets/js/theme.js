@@ -5,7 +5,6 @@ let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
   if (themeSetting == "system") {
     setThemeSetting("light");
-    pJSDom[0].pJS.fn.particlesRefresh();
   } else if (themeSetting == "light") {
     setThemeSetting("dark");
   } else {
