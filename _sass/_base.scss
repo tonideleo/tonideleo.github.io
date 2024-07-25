@@ -560,10 +560,10 @@ footer.sticky-bottom {
 }
 
 @keyframes shake {
-  10%, 90% { transform: translate3d(-0.1px, 0, 0); }
-  20%, 80% { transform: translate3d(0.2px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-0.4px, 0, 0); }
-  40%, 60% { transform: translate3d(0.4px, 0, 0); }
+  10%, 90% { transform: translate3d(-0.15px, 0, 0); }
+  20%, 80% { transform: translate3d(0.3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-0.6px, 0, 0); }
+  40%, 60% { transform: translate3d(0.6px, 0, 0); }
 }
 
 a:hover, a:focus {
