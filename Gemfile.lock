@@ -249,7 +249,7 @@ GEM
       forwardable-extended (~> 2.6)
     psych (5.1.2)
       stringio
-    public_suffix (6.0.0)
+    public_suffix (6.0.1)
     racc (1.8.0)
     rack (3.1.7)
     rack-session (2.0.0)
