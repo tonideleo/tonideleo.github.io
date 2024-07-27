@@ -25,7 +25,7 @@ back_to_top: true # set to false to disable the back to top button
 # Extra Special Settings
 # -----------------------------------------------------------------------------
 particle_js: true # Set the use of particle JS
-simple_parallax_js: true # Set the use of Simple Parallax JS
+simple_parallax_js: false # Set the use of Simple Parallax JS
 
 # -----------------------------------------------------------------------------
 # Theme

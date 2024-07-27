@@ -14,4 +14,5 @@ I know there a few bugs here and there, but everything seems almost to work grea
 - [x] Particle JS updates colors based on theme settings automatically
 - [x] Top menu bar shakes a tiny bit while on hover
 - [x] Page header text slides in from right to left and increases size on hover (need to fix div lenght)
-- [ ] Dark Reader API integration for dark theme detection
+- [x] Dark Reader API integration for dark theme detection
+- [ ] Simple Parallax JS is a bit slow, need to figure out a way to improve the performance
