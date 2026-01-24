@@ -1,10 +1,6 @@
-"yang":
-  - firstname: ["Jinkyu","J."]
-    url: https://scholar.google.com/citations?hl=en&user=KkRZ5fwAAAAJ
-
-"salviato":
-  - firstname: ["Marco", "M."]
-    url: "https://scholar.google.com/citations?user=0AZOkb8AAAAJ&hl=en&oi=ao"
+"adams":
+  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
+    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
 
 "podolsky":
   - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]

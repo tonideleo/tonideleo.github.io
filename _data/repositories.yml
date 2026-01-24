@@ -1,7 +1,14 @@
 github_users:
-  - tonideleo
+  - torvalds
+  - alshedivat
+
+repo_description_lines_max: 2
 
 github_repos:
-  - tonideleo/tpsolver
-  - tonideleo/CLT
-  - tonideleo/tonideleo.github.io
+  - alshedivat/al-folio
+  - jekyll/jekyll
+  - twbs/bootstrap
+  - jquery/jquery
+  - FortAwesome/Font-Awesome
+  - mathjax/MathJax
+  - jpswalsh/academicons

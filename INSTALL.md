@@ -1,11 +1,13 @@
-# Table of Contents
+# Installing and Deploying
 
-- [Table of Contents](#table-of-contents)
+<!--ts-->
+
 - [Installing and Deploying](#installing-and-deploying)
   - [Recommended Approach](#recommended-approach)
   - [Local setup on Windows](#local-setup-on-windows)
   - [Local setup using Docker (Recommended)](#local-setup-using-docker-recommended)
     - [Build your own docker image](#build-your-own-docker-image)
+    - [Have Bugs on Docker Image?](#have-bugs-on-docker-image)
   - [Local Setup with Development Containers](#local-setup-with-development-containers)
   - [Local Setup (Legacy, no longer supported)](#local-setup-legacy-no-longer-supported)
   - [Deployment](#deployment)
@@ -13,24 +15,27 @@
     - [For project pages](#for-project-pages)
     - [Enabling automatic deployment](#enabling-automatic-deployment)
     - [Manual deployment to GitHub Pages](#manual-deployment-to-github-pages)
+    - [Deploy on <a href="https://www.netlify.com/" rel="nofollow">Netlify</a>](https://www.netlify.com/)
     - [Deployment to another hosting server (non GitHub Pages)](#deployment-to-another-hosting-server-non-github-pages)
     - [Deployment to a separate repository (advanced users only)](#deployment-to-a-separate-repository-advanced-users-only)
+  - [Maintaining Dependencies](#maintaining-dependencies)
+    - [Updating the bundler itself](#updating-the-bundler-itself)
+    - [Updating all dependencies](#updating-all-dependencies)
   - [Upgrading from a previous version](#upgrading-from-a-previous-version)
 
-# Installing and Deploying
+<!--te-->
 
 ## Recommended Approach
 
-The recommended approach for using **al-folio** is to first create your own site using the template with as few changes as possible, and only when it is up and running customize it however you like. This way it is easier to pinpoint what causes a potential issue in case of a bug. The minimum steps required to create your own site are:
+The recommended approach for using **al-folio** is to first create your own site using the template with as few changes as possible, and only when it is up and running customize it however you like. This way it is easier to pinpoint what causes a potential issue in case of a bug. The minimum steps required to create your own site are ([video tutorial here](assets/video/tutorial_al_folio.mp4)):
 
 1. Create a new repository using this template. For this, click on [Use this template -> Create a new repository](https://github.com/new?template_name=al-folio&template_owner=alshedivat) above the file list. If you plan to upload your site to `<your-github-username>.github.io`, note that the name of your repository :warning: **MUST BE** :warning: `<your-github-username>.github.io` or `<your-github-orgname>.github.io`, as stated in the [GitHub pages docs](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#types-of-github-pages-sites).
-2. In this new repository, go to `Settings -> Actions -> General -> Workflow permissions` and give `Read and write permissions` to GitHub Actions.
-3. Open file `_config.yml`, set `url` to `https://<your-github-username>.github.io` and leave `baseurl` **empty** (do NOT delete it).
-4. Wait until the GitHub actions finish (check your repository **Actions** tab). Now, in addition to the master branch, your repository has a newly built gh-pages branch.
-5. Finally, in the repository page go to `Settings -> Pages -> Build and deployment`, make sure that `Source` is set to `Deploy from a branch` and set the branch to `gh-pages` (NOT to master).
-6. Wait until the GitHub actions finish (check your repository **Actions** tab), then simply navigate to `https://<your-github-username>.github.io` in your browser. At this point you should see a copy of the theme's [demo website](https://alshedivat.github.io/al-folio/).
-
-After everything is set up, you can download the repository to your machine and start customizing it. To do so, run the following commands:
+2. In this new repository, go to [Settings -> Actions -> General -> Workflow permissions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-default-github_token-permissions) and give `Read and write permissions` to GitHub Actions.
+3. Open file `_config.yml`, set `url` to `https://<your-github-username>.github.io` and leave `baseurl` **empty** (do NOT delete it), as `baseurl:`.
+4. Wait until the GitHub action with subtitle `Deploy site` finishes (check your repository **Actions** tab), which takes ~4 min. Now, in addition to the `main` branch, your repository has a newly built `gh-pages` branch.
+5. Finally, in the repository page go to `Settings -> Pages -> Build and deployment`, make sure that `Source` is set to `Deploy from a branch` and set the branch to `gh-pages` (NOT to main).
+6. Wait until the GitHub action `pages-build-deployment` finishes (check your repository **Actions** tab), which takes ~45s, then simply navigate to `https://<your-github-username>.github.io` in your browser. At this point you should see a copy of the theme's [demo website](https://alshedivat.github.io/al-folio/).
+   After everything is set up, you can download the repository to your machine and start customizing it. To do so, run the following commands:
 
 ```bash
 $ git clone git@github.com:<your-username>/<your-repo-name>.git
@@ -75,6 +80,36 @@ $ docker compose up --build
 > If you want to update jekyll, install new ruby packages, etc., all you have to do is build the image again using `--force-recreate` argument at the end of the previous command! It will download Ruby and Jekyll and install all Ruby packages again from scratch.
 
 If you want to use a specific docker version, you can do so by changing `latest` tag to `your_version` in `docker-compose.yaml`. For example, you might have created your website on `v0.10.0` and you want to stick with that.
+
+### Have Bugs on Docker Image?
+
+Sometimes, there might be some bugs in the current docker image. It might be version mismatch or anything. If you want to debug and easily solve the problem for yourself you can do the following steps:
+
+```
+docker compose up -d
+docker compose logs
+```
+
+Then you can see the bug! You can enter the container via this command:
+
+```
+docker compose exec -it jekyll /bin/bash
+```
+
+Then you can run the script:
+
+```
+./bin/entry_point.sh
+```
+
+You might see problems for package dependecy or something which is not available. You can fix it now by using
+
+```
+bundle install
+./bin/entry_point.sh
+```
+
+Most likely, this will solve the problem but it shouldn't really happen. So, please open a bug report for us.
 
 ## Local Setup with Development Containers
 
@@ -121,14 +156,32 @@ Starting version [v0.3.5](https://github.com/alshedivat/al-folio/releases/tag/v0
 1. Click on **Actions** tab and **Enable GitHub Actions**; do not worry about creating any workflows as everything has already been set for you.
 2. Go to `Settings -> Actions -> General -> Workflow permissions`, and give `Read and write permissions` to GitHub Actions
 3. Make any other changes to your webpage, commit, and push to your main branch. This will automatically trigger the **Deploy** action.
-4. Wait for a few minutes and let the action complete. You can see the progress in the **Actions** tab. If completed successfully, in addition to the `master` branch, your repository should now have a newly built `gh-pages` branch. **Do NOT touch this branch!**
-5. Finally, in the **Settings** of your repository, in the Pages section, set the branch to `gh-pages` (**NOT** to `master`). For more details, see [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
+4. Wait for a few minutes and let the action complete. You can see the progress in the **Actions** tab. If completed successfully, in addition to the `main` branch, your repository should now have a newly built `gh-pages` branch. **Do NOT touch this branch!**
+5. Finally, in the **Settings** of your repository, in the Pages section, set the branch to `gh-pages` (**NOT** to `main`). For more details, see [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
 
 If you keep your site on another branch, open `.github/workflows/deploy.yml` **on the branch you keep your website on** and change `on->push->branches` and `on->pull\_request->branches` to the branch you keep your website on. This will trigger the action on pulls/pushes on that branch. The action will then deploy the website on the branch it was triggered from.
 
 ### Manual deployment to GitHub Pages
 
 If you need to manually re-deploy your website to GitHub pages, go to Actions, click "Deploy" in the left sidebar, then "Run workflow."
+
+### Deploy on [Netlify](https://www.netlify.com/)
+
+1. [Use this template -> Create a new repository](https://github.com/new?template_name=al-folio&template_owner=alshedivat).
+2. Netlify: **Add new site** -> **Import an existing project** -> **GitHub** and give Netlify access to the repository you just created.
+3. Netlify: In the deploy settings
+   - Set **Branch to deploy** to `main`
+   - **Base directory** is empty
+   - Set **Build command** to `sed -i "s/^\(baseurl: \).*$/baseurl:/" _config.yml && bundle exec jekyll build`
+   - Set **Publish directory** to `_site`
+
+4. Netlify: Add the following two **environment variables**
+   - | Key            | Value                                                                                  |
+     | -------------- | -------------------------------------------------------------------------------------- |
+     | `JEKYLL_ENV`   | `production`                                                                           |
+     | `RUBY_VERSION` | set to the Ruby version found in `.github/workflows/deploy.yml` (for example, `3.3.5`) |
+
+5. Netlify: Click **Deploy** and wait for the site to be published. If you want to use your own domain name, follow the steps in [this documentation](https://docs.netlify.com/domains-https/custom-domains/).
 
 ### Deployment to another hosting server (non GitHub Pages)
 
@@ -183,46 +236,42 @@ In its default configuration, al-folio will copy the top-level `README.md` to th
 
 **Note:** Do _not_ run `jekyll clean` on your publishing source repo as this will result in the entire directory getting deleted, irrespective of the content of `keep_files` in `_config.yml`.
 
-## Upgrading from a previous version
+## Maintaining Dependencies
 
-If you installed **al-folio** as described above, you can configure a [GitHub action](https://github.com/AndreasAugustin/actions-template-sync) to automatically sync your repository with the latest version of the theme.
+**al-folio** uses **Bundler** (a Ruby dependency manager) to keep track of all the Ruby packages (called "gems") needed to run Jekyll and its plugins. Over time, these packages may receive updates that include bug fixes, security patches, and new features.
 
-Go to Settings -> Actions -> General -> Workflow permissions, give Read and write permissions to GitHub Actions, check "Allow GitHub Actions to create and approve pull requests", and save your changes.
+### Updating the bundler itself
 
-Then go to Actions -> New workflow -> set up a workflow yourself, setup the following workflow and commit your changes:
+The bundler tool itself should be kept up to date. To update bundler to the latest version, run:
 
-```yaml
-name: Sync from template
-on:
-  # cronjob trigger
-  schedule:
-    - cron: "0 0 1 * *"
-  # manual trigger
-  workflow_dispatch:
-jobs:
-  repo-sync:
-    runs-on: ubuntu-latest
-    steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: actions-template-sync
-        uses: AndreasAugustin/actions-template-sync@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          source_repo_path: alshedivat/al-folio
-          upstream_branch: master
+```bash
+$ bundle update --bundler
 ```
 
-You will receive a pull request within your repository if there are some changes available in the template.
+### Updating all dependencies
 
-Another option is to manually update your code by following the steps below:
+To update all Ruby gems to their latest compatible versions (as specified in your `Gemfile`), run:
+
+```bash
+$ bundle update --all
+```
+
+After updating dependencies, test your site locally to ensure everything still works correctly:
+
+- If using Docker: `docker compose up`
+- If using local setup: `bundle exec jekyll serve`
+
+> **Note:** Dependency updates may occasionally introduce breaking changes. If your site fails after updating, check the [FAQ](FAQ.md) for troubleshooting, or revert to the previous version with `bundle lock --add-platform ruby` and `git checkout Gemfile.lock`.
+
+## Upgrading from a previous version
+
+If you installed **al-folio** as described above, you can manually update your code by following the steps below:
 
 ```bash
 # Assuming the current directory is <your-repo-name>
 $ git remote add upstream https://github.com/alshedivat/al-folio.git
 $ git fetch upstream
-$ git rebase v0.11.0
+$ git rebase v0.16.3
 ```
 
 If you have extensively customized a previous version, it might be trickier to upgrade.
