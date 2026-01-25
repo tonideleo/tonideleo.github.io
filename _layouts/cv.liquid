@@ -86,17 +86,6 @@ layout: default
       {% if page.description %}
         <p class="post-description">{{ page.description }}</p>
       {% endif %}
-      {% if page.cv_pdf %}
-        <p style="text-align: center;white-space: pre;padding:0;margin:10px;">
-          See CV here:
-          <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url}}"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="float-center">
-            <i class="fa-solid fa-file-pdf fa-3x"></i>
-          </a>
-        </p>
-      {% endif %}
     </header>
 
     <article>

@@ -24,6 +24,7 @@ RUN apt-get update -y && \
         git \
         imagemagick \
         inotify-tools \
+        libyaml-dev \
         locales \
         nodejs \
         procps \

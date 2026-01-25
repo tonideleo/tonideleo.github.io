@@ -1,0 +1,10 @@
+Gemfile
+Gemfile.lock
+_config.yml
+_layouts/about.liquid
+_layouts/bib.liquid
+_layouts/cv.liquid
+_layouts/default.liquid
+_sass/_base.scss
+_sass/_layout.scss
+assets/js/theme.js
