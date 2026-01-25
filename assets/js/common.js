@@ -28,6 +28,7 @@ $(document).ready(function () {
     Toc.init($myNav);
     $("body").scrollspy({
       target: navSelector,
+      offset: 100,
     });
   }
 
@@ -57,4 +58,3 @@ $(document).ready(function () {
     trigger: "hover",
   });
 });
-

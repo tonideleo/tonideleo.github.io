@@ -1,7 +1,7 @@
 github_users:
   - tonideleo
 
+repo_description_lines_max: 2
+
 github_repos:
-  - tonideleo/tpsolver
-  - tonideleo/CLT
   - tonideleo/tonideleo.github.io

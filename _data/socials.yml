@@ -1,0 +1,11 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+cv_pdf: /assets/pdf/CV_toni.pdf # path to your CV PDF file
+email: a.deleo@me.com # your email address
+github_username: tonideleo # your GitHub user name
+rss_icon: true # comment this line to hide the RSS icon
+scholar_userid: -X6GqMsAAAAJ # your Google Scholar ID
+research_gate_profile: Antonio-Alessandro-Deleo # your profile on ResearchGate
+# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
+# whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)

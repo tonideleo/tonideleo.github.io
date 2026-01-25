@@ -27,6 +27,7 @@ table {
   td,
   th {
     font-size: 1rem;
+    padding: 1px 1rem 1px 0;
   }
 
   th {
@@ -71,10 +72,14 @@ blockquote {
     border-color: var(--global-tip-block);
     background-color: var(--global-tip-block-bg);
 
-    p {
+    em,
+    li,
+    p,
+    strong {
       color: var(--global-tip-block-text);
     }
 
+    a,
     h1,
     h2,
     h3,
@@ -89,10 +94,14 @@ blockquote {
     border-color: var(--global-warning-block);
     background-color: var(--global-warning-block-bg);
 
-    p {
+    em,
+    li,
+    p,
+    strong {
       color: var(--global-warning-block-text);
     }
 
+    a,
     h1,
     h2,
     h3,
@@ -107,10 +116,14 @@ blockquote {
     border-color: var(--global-danger-block);
     background-color: var(--global-danger-block-bg);
 
-    p {
+    em,
+    li,
+    p,
+    strong {
       color: var(--global-danger-block-text);
     }
 
+    a,
     h1,
     h2,
     h3,
@@ -195,24 +208,13 @@ ul.task-list input[type="checkbox"] {
       margin: 0;
     }
   }
-
-  .typed-info {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    // min-height: 30px; 
-    font-family: monospace;
-    display: inline-block;
-    margin: 0;
-  }
 }
 
 .profile.float-right {
-  position: relative;
   margin-left: 1rem;
 }
 
 .profile.float-left {
-  position: relative;
   margin-right: 1rem;
 }
 
@@ -248,10 +250,11 @@ ul.task-list input[type="checkbox"] {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
-.navbar .dropdown-menu {
+.navbar .dropdown-menu,
+.btn-group.dropdown .dropdown-menu {
   background-color: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
 
@@ -274,6 +277,16 @@ ul.task-list input[type="checkbox"] {
   &:hover {
     color: var(--global-hover-color);
     background-color: var(--global-bg-color);
+  }
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: var(--global-hover-color);
+  color: var(--global-hover-text-color) !important;
+
+  &:hover {
+    color: var(--global-hover-text-color);
   }
 }
 
@@ -312,6 +325,24 @@ ul.task-list input[type="checkbox"] {
     font-size: 1.7rem;
 
     a {
+      img {
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-bottom: 0.5rem;
+        // margin: 0.5rem;
+      }
+
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        margin-bottom: 0.5rem;
+
+        image {
+          width: 1.7rem;
+          height: 1.7rem;
+        }
+      }
+
       i::before {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
@@ -387,12 +418,31 @@ ul.task-list input[type="checkbox"] {
     font-size: 4rem;
 
     a {
+      img {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-bottom: 1rem;
+      }
+
+      svg {
+        width: 3.5rem;
+        height: 4rem;
+        margin-bottom: 0.5rem;
+
+        image {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+
       i::before {
         color: var(--global-text-color);
         transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
+        text-decoration: none;
+
         i::before {
           color: var(--global-theme-color);
         }
@@ -541,69 +591,7 @@ footer.sticky-bottom {
   }
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
- 80% { transform: rotate(0deg); }
- 85% { transform: rotate(50deg); }
- 95% { transform: rotate(-50deg); }
-100% { transform: rotate(0deg); }
-}
-
-@keyframes shake {
-  10%, 90% { transform: translate3d(-0.15px, 0, 0); }
-  20%, 80% { transform: translate3d(0.3px, 0, 0); }
-  30%, 50%, 70% { transform: translate3d(-0.6px, 0, 0); }
-  40%, 60% { transform: translate3d(0.6px, 0, 0); }
-}
-
-a:hover, a:focus {
-  // color: #ff1303;
-  // animation: wiggle 2.5s infinite;
-  // font-size: 110%;
-  animation: shake 0.75s cubic-bezier(.36,.07,.19,.97) both;
-  // transform: scale(1.1);
-  // transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-.post-title:hover {
-  transform: scale(1.05);
-}
 .post-title {
-  overflow: hidden;
-  // border-right: .15em solid orange;
-  white-space: nowrap;
-  // font-size: 1.6rem;
-  width: 0;
-  animation: fadeInRight 1s ease-in-out, typing 3s forwards ;
-  transition: transform 330ms ease-in-out;
-  transform-origin: 0% 50%;
-  mjx-container[jax="CHTML"][display="true"] {
-    display: unset;
-  }
-
-}
-
-.post-title-typed {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
   }
@@ -652,6 +640,7 @@ a:hover, a:focus {
   .page-item {
     .page-link {
       color: var(--global-text-color);
+      padding: 0.75rem 1.15rem;
 
       &:hover {
         color: $black-color;
@@ -667,6 +656,12 @@ a:hover, a:focus {
       }
     }
   }
+}
+
+// diff2html - Fix for diff2html line number overflow
+
+.d2h-diff-table {
+  position: relative;
 }
 
 // Distill
@@ -708,8 +703,8 @@ a:hover, a:focus {
   }
 
   h2.category {
-    color: var(--global-text-color);
-    border-bottom: 2px solid var(--global-text-color);
+    color: var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -739,8 +734,8 @@ a:hover, a:focus {
   }
 
   h2.bibliography {
-    color: var(--global-text-color);
-    border-top: 2px solid var(--global-text-color);
+    color: var(--global-divider-color);
+    border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
     text-align: right;
@@ -755,7 +750,6 @@ a:hover, a:focus {
       margin-bottom: 1rem;
 
       .preview {
-        image-resolution: 600dpi;
       }
 
       .abbr {
@@ -765,6 +759,7 @@ a:hover, a:focus {
           display: inline-block;
           background-color: var(--global-theme-color);
           margin-bottom: 0.5rem;
+          color: var(--global-card-bg-color) !important;
 
           a {
             color: white;
@@ -899,6 +894,18 @@ a:hover, a:focus {
 // Rouge Color Customization
 figure.highlight {
   margin: 0 0 1rem;
+
+  // Responsive code block container
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  pre {
+    // Ensure code blocks can scroll horizontally
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 pre {
@@ -907,12 +914,19 @@ pre {
   border-radius: 6px;
   padding: 6px 12px;
 
+  // Responsive behavior for code blocks
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre;
+  word-wrap: normal;
+
   pre,
   code {
     background-color: transparent;
     border-radius: 0;
     margin-bottom: 0;
     padding: 0;
+    white-space: inherit;
   }
 }
 
@@ -921,6 +935,10 @@ code {
   background-color: var(--global-code-bg-color);
   border-radius: 3px;
   padding: 3px 3px;
+
+  // Inline code should wrap
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 // Transitioning Themes
@@ -1060,29 +1078,6 @@ progress::-moz-progress-bar {
       color: var(--global-hover-text-color) !important;
     }
   }
-
-  .dropdown-menu {
-    background-color: var(--global-bg-color);
-  }
-
-  .dropdown-item {
-    background-color: var(--global-bg-color);
-    color: var(--global-text-color);
-
-    &:hover {
-      color: var(--global-hover-color);
-    }
-  }
-
-  .dropdown-item.active,
-  .dropdown-item:active {
-    background-color: var(--global-hover-color);
-    color: var(--global-hover-text-color) !important;
-
-    &:hover {
-      color: var(--global-hover-text-color);
-    }
-  }
 }
 
 /* Table of Contents */
@@ -1122,6 +1117,62 @@ nav[data-toggle="toc"] {
     visibility: hidden;
     height: 0;
     top: 0;
+  }
+
+  /* Responsive code blocks for mobile */
+  pre {
+    font-size: 0.875rem;
+    padding: 8px 10px;
+    margin: 0.5rem 0;
+  }
+
+  figure.highlight {
+    margin: 0.5rem 0;
+
+    pre {
+      font-size: 0.875rem;
+      padding: 8px 10px;
+    }
+  }
+
+  code {
+    font-size: 0.875rem;
+    padding: 2px 4px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  pre {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  figure.highlight {
+    pre {
+      font-size: 0.8rem;
+      padding: 6px 8px;
+    }
+  }
+
+  code {
+    font-size: 0.8rem;
+    padding: 1px 3px;
+  }
+}
+
+/* Medium screens - optimize for tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  pre {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  figure.highlight {
+    pre {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
   }
 }
 
@@ -1223,7 +1274,8 @@ ninja-keys::part(ninja-input-wrapper) {
   width: 100%;
 }
 
-.newsletter-form-input {
+.newsletter-form-input,
+.bibsearch-form-input {
   color: var(--global-newsletter-text-color);
   background: var(--global-newsletter-bg-color);
   border: 1px solid var(--global-newsletter-text-color);
@@ -1360,4 +1412,165 @@ ninja-keys::part(ninja-input-wrapper) {
   .arrow:before {
     border-bottom-color: var(--global-divider-color);
   }
+}
+
+// highlight-search-term
+::highlight(search) {
+  background-color: var(--global-theme-color);
+  color: var(--global-text-color);
+}
+
+figure.cover {
+  display: inline-block;
+  text-align: center;
+  margin: 0.5rem; /* adjust as needed */
+
+  img {
+    vertical-align: bottom;
+  }
+
+  figcaption.abandoned {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #ee5f5b;
+  }
+
+  figcaption.finished,
+  figcaption.watched {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #62c462;
+  }
+
+  figcaption.interested {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #7691db;
+  }
+
+  figcaption.paused {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #bdac7e;
+  }
+
+  figcaption.queued {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #9e76b5;
+  }
+
+  figcaption.reading,
+  figcaption.watching {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #f89406;
+  }
+
+  figcaption.reread,
+  figcaption.rewatch {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #a6517d;
+  }
+
+  figcaption.uncategorized {
+    font-family: monospace;
+    color: #23212d;
+    text-transform: uppercase;
+    background-color: #b0abb3;
+  }
+
+  /* mouse over link */
+  a.cover-link:hover {
+    color: #23212d !important;
+  }
+}
+
+.calendar-toggle-btn {
+  background-color: #007acc;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.calendar-toggle-btn:hover {
+  background-color: #005fa3;
+}
+
+.google-calendar-embed {
+  width: 100%;
+  height: 600px;
+  border: none;
+
+  @media (max-width: 768px) {
+    height: 500px;
+  }
+
+  @media (max-width: 480px) {
+    height: 400px;
+  }
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  overflow-x: auto;
+}
+
+/******************************************************************************
+ * Custom Animations and Styles (Toni's customizations)
+ ******************************************************************************/
+
+.typed-info {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-family: monospace;
+  display: inline-block;
+  line-height: 1.2;
+  height: 1.2em;
+  vertical-align: bottom;
+  white-space: nowrap;     /* never wrap */
+  overflow: visible;      /* allow text to spill to the right */
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+ 80% { transform: rotate(0deg); }
+ 85% { transform: rotate(50deg); }
+ 95% { transform: rotate(-50deg); }
+100% { transform: rotate(0deg); }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-0.15px, 0, 0); }
+  20%, 80% { transform: translate3d(0.3px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-0.6px, 0, 0); }
+  40%, 60% { transform: translate3d(0.6px, 0, 0); }
+}
+
+a:hover, a:focus {
+  animation: shake 0.75s cubic-bezier(.36,.07,.19,.97) both;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }

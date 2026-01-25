@@ -1,0 +1,8 @@
+Custom JavaScript Additions:
+1. assets/js/particle-call-function.js - Custom particle.js initialization
+2. assets/js/particles.js - Particle.js library (43KB)
+3. assets/js/particles.min.js - Minified version
+4. assets/js/simpleParallax.js - Parallax library (currently disabled)
+
+Modified Core JavaScript:
+1. assets/js/theme.js - Lines 4-29: Custom particle color switching on theme toggle

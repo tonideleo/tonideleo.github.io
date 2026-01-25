@@ -1,0 +1,13 @@
+Custom SASS Modifications:
+
+_sass/_base.scss:
+- Lines 199-206: .typed-info styling for Typed.js
+- Lines 544-551: @keyframes fadeInRight
+- Lines 554-560: @keyframes wiggle  
+- Lines 562-567: @keyframes shake
+- Line 573: Link hover shake animation (0.75s)
+
+_sass/_layout.scss:
+- Lines 20-33: @keyframes fadein (webkit, moz, standard)
+- Lines 36-49: #particles-js container styling (fixed position, z-index: -10, 2s fadein)
+- Line 87: Navbar opacity 0.8

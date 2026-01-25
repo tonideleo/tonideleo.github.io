@@ -11,7 +11,7 @@
               </td>
             {% else %}
               <td class="list-group-category-icon"></td>
-          {% endif %}
+            {% endif %}
             <!-- Calculate colspan number for category title -->
             {% assign i = 1 %}
             {% for item in content.items %}
@@ -26,10 +26,6 @@
             <td class="list-group-name">
               <b>{{ content.issuer }}</b>
             </td>
-          {% comment  %} <td class="list-group-name">{{ content.date }}</td> {% endcomment %}
-          </tr>
-          <tr>
-            <td></td>
             <td class="list-group-name">{{ content.date }}</td>
           </tr>
         </tbody>

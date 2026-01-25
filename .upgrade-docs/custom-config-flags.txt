@@ -1,0 +1,14 @@
+Custom _config.yml Additions:
+
+Lines 26-28: Extra Special Settings
+- particle_js: true
+- simple_parallax_js: false
+
+Line 139: blog_name: "Computational Engineering"
+Line 140: blog_description: "simple, pragmatic codes for engineers"
+
+Lines 276: Custom plugin: particles-js-rails
+
+Scholar settings (Lines 320-321):
+- last_name: [Deleo]
+- first_name: [Antonio, A.]
