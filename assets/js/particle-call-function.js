@@ -1,18 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to determine the user's system theme preference
-  const getSystemTheme = () => {
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-      }
-      return "light";
-  };
-
-  // Load and modify particles configuration based on the system theme
+  // Load particles configuration and set initial colors based on current theme
   particlesJS.load('particles-js', '/assets/json/particles.json', function() {
       console.log('callback - particles.js config loaded');
-      
-      // Modify particle colors based on the theme
-      const theme = getSystemTheme();
+
+      // Set particle colors based on the current computed theme
+      const theme = determineComputedTheme();
       const particles = pJSDom[0].pJS.particles;
 
       if (theme === "dark") {

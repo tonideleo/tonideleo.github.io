@@ -4,22 +4,36 @@
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
   if (themeSetting == "system") {
-    // Custom: Update particle colors for light mode
-    pJSDom[0].pJS.particles.color.value = '#000000';
-    pJSDom[0].pJS.particles.line_linked.color = '#000000';
-    pJSDom[0].pJS.fn.particlesRefresh();
     setThemeSetting("light");
   } else if (themeSetting == "light") {
     setThemeSetting("dark");
-    // Custom: Update particle colors for dark mode
-    pJSDom[0].pJS.particles.color.value = '#ffffff';
-    pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
-    pJSDom[0].pJS.fn.particlesRefresh();
   } else {
     setThemeSetting("system");
-    // Custom: Update particle colors based on system theme
-    const systemTheme = determineComputedTheme();
-    if (systemTheme == "dark") {
+  }
+};
+
+// Change the theme setting and apply the theme.
+let setThemeSetting = (themeSetting) => {
+  localStorage.setItem("theme", themeSetting);
+
+  document.documentElement.setAttribute("data-theme-setting", themeSetting);
+
+  applyTheme();
+};
+
+// Apply the computed dark or light theme to the website.
+let applyTheme = () => {
+  let theme = determineComputedTheme();
+
+  transTheme();
+  setHighlight(theme);
+  setGiscusTheme(theme);
+  setSearchTheme(theme);
+  updateCalendarUrl();
+
+  // Update particle colors if particles.js is loaded
+  if (typeof pJSDom !== "undefined" && pJSDom.length > 0) {
+    if (theme === "dark") {
       pJSDom[0].pJS.particles.color.value = '#ffffff';
       pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
     } else {
@@ -28,7 +42,11 @@ let toggleThemeSetting = () => {
     }
     pJSDom[0].pJS.fn.particlesRefresh();
   }
-};
+
+  // if mermaid is not defined, do nothing
+  if (typeof mermaid !== "undefined") {
+    setMermaidTheme(theme);
+  }
 
   // if diff2html is not defined, do nothing
   if (typeof Diff2HtmlUI !== "undefined") {
