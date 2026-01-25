@@ -1536,6 +1536,11 @@ mjx-container[jax="CHTML"][display="true"] {
   margin-top: 5px;
   font-family: monospace;
   display: inline-block;
+  line-height: 1.2;
+  height: 1.2em;
+  vertical-align: bottom;
+  white-space: nowrap;     /* never wrap */
+  overflow: visible;      /* allow text to spill to the right */
 }
 
 @keyframes fadeInRight {
