@@ -5,3 +5,6 @@ repo_description_lines_max: 2
 
 github_repos:
   - tonideleo/tonideleo.github.io
+  - tonideleo/TPSolver
+  - tonideleo/CLT
+

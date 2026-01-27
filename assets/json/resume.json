@@ -1,135 +1,125 @@
 {
   "basics": {
     "name": "Antonio Alessandro Deleo",
-    "label": "Aerospace Engineer",
-    "image": "",
-    "email": ["a.deleo@me.com", "Contact me"],
-    // "phone": "(912) 123-4567",
-    "url": "https://tonideleo.github.io",
-    "summary": "A structural aerospace engineer in the field of computational fracture mechanics",
+    "label": "Aerospace Structural Engineer",
+    "image": "/assets/img/toni_pic.jpg",
+    "email": "a.deleo@me.com",
+    // "phone": "+1 (206) 708-3201",
+    "url": "https://www.tonideleo.com",
+    "summary": "Structural Analysis Engineer specializing in computational fracture mechanics, composite materials modeling, and finite element analysis. Developer of the MARS finite element research code with expertise in discrete modeling approaches for composite structures.",
     "location": {
-      // "address": "2712 Broadway St",
-      // "postalCode": "CA 94115",
       "city": "San Diego",
       "countryCode": "US",
       "region": "California"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "Google Scholar",
+        "username": "Antonio Alessandro Deleo",
+        "url": "https://scholar.google.com"
+      },
+      {
+        "network": "ResearchGate",
+        "username": "Antonio Alessandro Deleo",
+        "url": "https://www.researchgate.net"
       }
     ]
   },
   "work": [
     {
-      "name": "ES3",
+      "name": "Engineering and Software System Solutions, Inc. (ES3)",
       "location": "San Diego, California",
       "position": "Structural Analysis Engineer (SME)",
       "url": "https://www.es3inc.com",
-      "startDate": "2023-08-03",
-      // "endDate": "1955-01-01",
-      "summary": "Subject Matter Expert in testing, manufacturing, and computational analysis of composite aerospace structures.",
-      "highlights": ["Subject Matter Expert","Manufacturing and Testing","Discrete Computational Modeling","Composite Aerospace Structures"]
-    },
-    {
-      "name": "University of Washington",
-      "location": "Seattle, Washington",
-      "position": "Research Assistant",
-      "url": "https://www.aa.uw.edu",
-      "startDate": "2016-10-01",
-      "endDate": "2023-06-30",
-      "summary": "Doctoral research assistant in MAMS Lab under the supervision of Prof. Marco Salviato",
-      "highlights": [""]
+      "startDate": "2023-08-01",
+      "summary": "Subject Matter Expert in Composite Modeling, developing the MARS Finite Element Research Code",
+      "highlights": [
+        "Subject Matter Expert (SME) in Composite Modeling",
+        "Developer of MARS Finite Element Research Code",
+        "Supervisor: Dr. Daniele Pelessone, Chief Scientist"
+      ]
     }
   ],
-  // "volunteer": [
-  //   {
-  //     "organization": "People's Climate March",
-  //     "location": "Zurich, Switzerland",
-  //     "position": "Lead Organizer",
-  //     "url": "https://example.com",
-  //     "startDate": "2014-04-01",
-  //     "endDate": "2015-07-01",
-  //     "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-  //     "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-  //   }
-  // ],
   "education": [
     {
-      "institution": "University of Washington, Seattle, USA",
-      "location": "Seattle, WA",
+      "institution": "University of Washington",
+      "location": "Seattle, Washington",
       "url": "https://www.aa.uw.edu/",
-      "area": "Department of Aeronautics & Astronautics",
+      "area": "Aerospace Engineering",
       "studyType": "Doctor of Philosophy (Ph.D.)",
-      "startDate": "2016-10-01",
-      "endDate": "2023-06-08",
+      "startDate": "2016-09-01",
+      "endDate": "2023-09-01",
       "score": "3.95",
-      "courses": ["Theory of RelativityA"]
+      "courses": [
+        "Thesis: FastDM4C: A Fast and Efficient Discrete Model for Composites",
+        "Supervisor: Prof. Marco Salviato"
+      ]
     },
     {
-      "institution": "University of Washington, Seattle, USA",
-      "location": "Seattle, WA",
+      "institution": "University of Washington",
+      "location": "Seattle, Washington",
       "url": "https://www.aa.uw.edu/",
-      "area": "Department of Aeronautics & Astronautics",
-      "studyType": "Bachelor of Science (B.Sc.)",
-      "startDate": "2012-10-01",
-      "endDate": "2016-06-07",
+      "area": "Aerospace Engineering",
+      "studyType": "Bachelor of Science (B.S.)",
+      "startDate": "2014-09-01",
+      "endDate": "2016-06-01",
       "score": "3.95",
-      "courses": ["Theory of Relativity"]
+      "courses": [
+        "Aeronautical Capstone Project",
+        "Technical Electives in Aerostructures and Modeling"
+      ]
     },
     {
-      "institution": "Conservatory of Music \"G. Rossini\"",
+      "institution": "Cascadia College",
+      "location": "Bothell, Washington",
+      "url": "https://www.cascadia.edu",
+      "area": "Civil Aeronautical",
+      "studyType": "Bachelor of Science (B.S. Transfer)",
+      "startDate": "2012-09-01",
+      "endDate": "2014-06-01",
+      "score": "3.97",
+      "courses": []
+    },
+    {
+      "institution": "National Conservatory of Music \"G. Rossini\"",
       "location": "Pesaro, Italy",
       "url": "https://www.conservatoriorossini.it/",
       "area": "Flute Performance",
-      "studyType": "Master of Arts (M.Mus.)",
-      "startDate": "2008-09-01",
-      "endDate": "2010-06-30",
-      "score": "3.95",
-      "courses": ["Theory of Relativity"]
-    },
-    {
-      "institution": "Conservatory of Music \"G. Rossini\"",
-      "location": "Pesaro, Italy",
-      "url": "https://www.conservatoriorossini.it/",
-      "area": "Flute Performance",
-      "studyType": "Bachelor of Arts (B.Mus.)",
+      "studyType": "Bachelor and Master of Music (B.Mus., M.Mus.)",
       "startDate": "2005-10-01",
-      "endDate": "2008-06-30",
-      "score": "3.95",
-      "courses": ["Theory of Relativity"]
+      "endDate": "2010-06-01",
+      "score": "4.0",
+      "courses": []
     }
   ],
   "awards": [
     {
-      "title": "President Honors",
-      "date": "2012-01-01",
-      "awarder": "Cascadia College",
-      "url": "https://www.cascadia.edu/about/student-achievement/awards.aspx#:~:text=Students%20who%20have%20earned%20a,will%20be%20awarded%20President's%20Honors.&text=Students%20who%20have%20earned%20a%20quarterly%20college%20level%20GPA%20between,will%20be%20awarded%20Faculty%20Honors.",
-      "summary": "From 2012 to 2014. Students who have earned a quarterly college level GPA of 3.9 or higher will be awarded President's Honors."
+      "title": "Robert Reynolds Scholarship",
+      "date": "2015-05-01",
+      "awarder": "University of Washington",
+      "url": "https://www.aa.uw.edu",
+      "summary": "Scholarship awarded for academic excellence in Aerospace Engineering"
     },
     {
       "title": "Valedictorian",
       "date": "2015-08-01",
       "awarder": "GEA Aviation Program - ENAC - ISAE/Supaero",
       "url": "https://groupe-isae.fr/en/enac",
-      "summary": "Ended first of the class in the aviation summer program offered in Tolouse at ENAC and ISAE Supaero."
+      "summary": "Finished first in class in the aviation summer program offered in Toulouse at ENAC and ISAE Supaero"
     },
     {
-      "title": "Robert Reynolds Scholarships",
-      "date": "2015-05-01",
-      "awarder": "University of Washington Seattle",
-      "url": "https://uw.aa.edu",
-      "summary": "TODO"
+      "title": "President Honors",
+      "date": "2012-01-01",
+      "awarder": "Cascadia College",
+      "url": "https://www.cascadia.edu/about/student-achievement/awards.aspx",
+      "summary": "Awarded from 2012 to 2014. Students who have earned a quarterly college level GPA of 3.9 or higher"
     }
   ],
   "certificates": [
     {
-      "name": "Google TensorFlow Developer",
+      "name": "Google TensorFlow Developer Certificate",
       "date": "2024-01-28",
-      "issuer": "Tensorflow",
+      "issuer": "Google TensorFlow",
       "url": "https://www.credential.net/aa5283b3-aa7a-42f8-ab10-9f97b417ec16",
       "icon": "fa-brands fa-google fa-2x"
     },
@@ -141,7 +131,7 @@
       "icon": "ai ai-coursera-square ai-2x"
     },
     {
-      "name": "Convolution Neural Network in TensorFlow",
+      "name": "Convolutional Neural Networks in TensorFlow",
       "date": "2023-02-20",
       "issuer": "DeepLearning.AI",
       "url": "https://www.coursera.org/account/accomplishments/certificate/6H7ERVQGZXZA",
@@ -159,50 +149,14 @@
       "date": "2022-03-04",
       "issuer": "Nvidia",
       "url": "https://courses.nvidia.com/certificates/f9ae4fcead47410ba951a223671f6a71",
-      "icon": "fa-solid fa-laptop fa-2x"
+      "icon": "fa-solid fa-microchip fa-2x"
     }
   ],
-  // "publications": [
-  //   {
-  //     "name": "Zur Elektrody/namik bewegter Körper",
-  //     "publisher": "Annalen der Physik",
-  //     "releaseDate": "1905-06-30",
-  //     "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-  //     "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-  //   },
-  //   {
-  //     "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-  //     "publisher": "Annalen der Physik",
-  //     "releaseDate": "1905-03-18",
-  //     "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-  //     "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-  //   },
-  //   {
-  //     "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-  //     "publisher": "Annalen der Physik",
-  //     "releaseDate": "1916-03-20",
-  //     "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-  //     "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
-  //   }
-  // ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    },
-    {
       "name": "Programming",
-      "level": "Master",
-      "icon": "fa-solid fa-laptop",
+      "level": "Expert",
+      "icon": "fa-solid fa-code",
       "keywords": [
         "C++",
         "CUDA",
@@ -214,9 +168,9 @@
       ]
     },
     {
-      "name": "FEM",
-      "level": "Master",
-      "icon": "fa-solid fa-laptop",
+      "name": "Finite Element Analysis",
+      "level": "Expert",
+      "icon": "fa-solid fa-diagram-project",
       "keywords": [
         "MARS Solver",
         "Abaqus",
@@ -230,10 +184,10 @@
     },
     {
       "name": "Composite Manufacturing",
-      "level": "Master",
-      "icon": "fa-solid fa-laptop",
+      "level": "Expert",
+      "icon": "fa-solid fa-industry",
       "keywords": [
-        "Manual Layup",
+        "Hand Layup",
         "Autoclave",
         "VARTM",
         "Molding",
@@ -242,40 +196,48 @@
       ]
     },
     {
-      "name": "Database",
-      "level": "Master",
-      "icon": "fa-solid fa-laptop",
+      "name": "Database Management",
+      "level": "Proficient",
+      "icon": "fa-solid fa-database",
       "keywords": [
         "SQLite",
         "MySQL",
-        "PostGreSQL"
+        "PostgreSQL"
       ]
     },
     {
-      "name": "Software Management",
-      "level": "Master",
-      "icon": "fa-solid fa-laptop",
+      "name": "Software Development & Management",
+      "level": "Expert",
+      "icon": "fa-solid fa-laptop-code",
       "keywords": [
         "Git",
         "GitKraken",
-        "Apptainer",
+        "Docker",
         "Singularity",
-        "Docker"
+        "Apptainer"
       ]
     },
     {
-      "name": "Photography",
-      "level": "Master",
-      "icon": "fa-solid fa-laptop",
+      "name": "Design & Visualization",
+      "level": "Proficient",
+      "icon": "fa-solid fa-palette",
       "keywords": [
+        "Photoshop",
         "Illustrator",
         "Inkscape",
         "darktable",
-        "Photoshop",
         "Lightroom"
       ]
+    },
+    {
+      "name": "Virtual Reality",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-vr-cardboard",
+      "keywords": [
+        "Unity",
+        "Unreal Engine"
+      ]
     }
-
   ],
   "languages": [
     {
@@ -287,19 +249,40 @@
       "language": "English",
       "fluency": "Fluent",
       "icon": ""
+    },
+    {
+      "language": "Romanian",
+      "fluency": "Conversational",
+      "icon": ""
     }
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Outdoor Activities",
+      "icon": "fa-solid fa-mountain",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Climbing (Sport, Bouldering, Trad Multipitches)",
+        "Mountaineering",
+        "Hiking",
+        "Trekking",
+        "Skiing"
+      ]
+    },
+    {
+      "name": "Music Performance",
+      "icon": "fa-solid fa-music",
+      "keywords": [
+        "Flute and Piccolo Player",
+        "UW Chamber Philharmonic Orchestra",
+        "Bainbridge Island Symphonic Orchestra",
+        "Puget Sound Symphonic Orchestra"
+      ]
+    },
+    {
+      "name": "Culinary Arts",
+      "icon": "fa-solid fa-utensils",
+      "keywords": [
+        "Italian Cuisine"
       ]
     }
   ],
@@ -307,22 +290,205 @@
     {
       "name": "Prof. Marco Salviato",
       "icon": "fa-solid fa-building-columns",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "reference": "Professor in Aeronautics & Astronautics, University of Washington. Ph.D. Thesis Supervisor."
     },
     {
-      "name": "Prof. Eli Livne",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "name": "Dr. Daniele Pelessone",
+      "icon": "fa-solid fa-flask",
+      "reference": "Chief Scientist at ES3, Inc. Current supervisor and MARS code principal developer."
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "University of Washington Climbing Club",
+      "location": "Seattle, Washington",
+      "position": "Climbing Officer",
+      "url": "https://www.washington.edu",
+      "startDate": "2016-09-01",
+      "endDate": "2023-06-01",
+      "summary": "Former Climbing Officer organizing activities and trips for the university climbing community",
+      "highlights": []
+    }
+  ],
+  "publications": [
+    {
+      "name": "FastDM4C: A Fast and Efficient Discrete Model for Composites",
+      "publisher": "Journal of the Mechanics and Physics of Solids",
+      "releaseDate": "2026",
+      "url": "",
+      "summary": "Deleo A.A., Pelessone D., Salviato M. (in preparation)"
+    },
+    {
+      "name": "A Novel Discrete, Mesoscale Modeling Framework for the Simulation of the Damaging and Fracturing Behavior of Composites",
+      "publisher": "Journal of the Mechanics and Physics of Solids",
+      "releaseDate": "2026",
+      "url": "",
+      "summary": "Deleo A.A.*, Phenisee E.S.*, Pelessone D., Flores M., Salviato M. (in preparation)"
+    },
+    {
+      "name": "Origami-Based Deployable Structures Made of Carbon Fiber Reinforced Polymer Composites",
+      "publisher": "Composites Science and Technology",
+      "releaseDate": "2020",
+      "url": "",
+      "summary": "Deleo A.A., O'Neil J., Yasuda H., Salviato M., Yang J."
+    },
+    {
+      "name": "Aerogami: Composite Origami Structures as Active Aerodynamic Control",
+      "publisher": "Composites Part B",
+      "releaseDate": "2020",
+      "url": "",
+      "summary": "Cozmei M., Hasseler T., Kinyon E., Wallace R., Deleo A.A., Salviato M."
+    },
+    {
+      "name": "A Study on the Multi-Axial Fatigue Failure Behavior of Notched Composite Laminates",
+      "publisher": "Composites Part A",
+      "releaseDate": "2019",
+      "url": "",
+      "summary": "Qiao Y., Deleo A.A., Salviato M."
+    },
+    {
+      "name": "A Multiscale Framework for Simulating Structural Assemblies Using a Discrete Mesoscale Model for Composites (DM4C) Approach",
+      "publisher": "ASC/Springer Nature",
+      "releaseDate": "2026",
+      "url": "",
+      "summary": "Flores M., Phenisee E.S., Deleo A.A., Pelessone D., Salviato M. (in print)"
+    },
+    {
+      "name": "Advancing Additively Manufactured Composite Structural Joints Testing with Discrete Computational Modeling and Digital Twins",
+      "publisher": "Springer Nature",
+      "releaseDate": "2026",
+      "url": "",
+      "summary": "Deleo A.A., Phenisee E.S., Derek S., Flores M., Pelessone D., Salviato M."
+    },
+    {
+      "name": "To the Mesoscale and Beyond! Capturing Complex Damage Mechanisms in Composites via Simple, Physics-Based, Discrete Mathematical Models of Fibers and Matrix",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2023",
+      "url": "",
+      "summary": "Salviato M., Phenisee E.S.*, Deleo A.A.*, Pelessone D., Flores M."
+    },
+    {
+      "name": "FastDM4C: A Fast and Efficient Discrete Model for Composites",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2023",
+      "url": "",
+      "summary": "Deleo A.A., Phenisee E.S., Pelessone D., Flores M., Salviato M."
+    },
+    {
+      "name": "Discrete, Meso-Scale Modeling of Fiber-Reinforced Composites (DM4C): Application to the Additive Manufacturing of Continuous Fibers",
+      "publisher": "IMECE Conference Proceedings",
+      "releaseDate": "2023",
+      "url": "",
+      "summary": "Salviato M., Phenisee E.S.*, Deleo A.A.*, Pelessone D., Flores M."
+    },
+    {
+      "name": "Investigation of the Effect of In-Plane Waviness on the Mechanical Behavior of Additive Manufactured Composite Laminates",
+      "publisher": "SAMPE Conference Proceedings",
+      "releaseDate": "2023",
+      "url": "",
+      "summary": "Phenisee S., Deleo A.A., Pelessone D., Huff S., Shelley D., Flores M., Salviato M."
+    },
+    {
+      "name": "Analysis of Additive Manufactured Structural Joints Using Discrete Model for Composites (DM4C)",
+      "publisher": "SAMPE Conference Proceedings",
+      "releaseDate": "2023",
+      "url": "",
+      "summary": "Deleo A.A., Phenisee S., Pelessone D., Furmanski J., Flores M., Salviato M."
+    },
+    {
+      "name": "A Novel Discrete, Mesoscale Modeling Framework for the Simulation of the Damaging and Fracturing Behavior of Composites",
+      "publisher": "IMECE Conference Proceedings",
+      "releaseDate": "2022",
+      "url": "",
+      "summary": "Salviato M., Phenisee S.*, Deleo A.A.*, Pelessone D., Flores M."
+    },
+    {
+      "name": "Discrete Modeling and Machine Learning Assisted Calibration of 3D Printed Carbon Fiber Reinforced Plastics (CFRP) Structural Joints",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2022",
+      "url": "",
+      "summary": "Deleo A.A., Phenisee S., Pelessone D., Furmanski J., Flores M., Salviato M."
+    },
+    {
+      "name": "Discrete, Meso-Scale Modeling of Fiber-Reinforced Composites (DM4C): Application to Additive Manufacturing of Continuous Fiber Composites",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2022",
+      "url": "",
+      "summary": "Phenisee S., Deleo A.A., Pelessone D., Flores M., Salviato M."
+    },
+    {
+      "name": "Active Aerodynamic Control Surfaces Based on Origami Composites",
+      "publisher": "AIAA Region VI Student Conference",
+      "releaseDate": "2019",
+      "url": "",
+      "summary": "Cozmei M., Hasseler T., Kinion E., Wallace R., Deleo A.A., Salviato M."
+    },
+    {
+      "name": "Multi-Axial Fatigue Behavior of Notched Composite Structures",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2018",
+      "url": "",
+      "summary": "Qiao Y., Deleo A.A., Liao K., Salviato M."
+    },
+    {
+      "name": "Computational Study for Size Effect in Composites and Nanocomposites",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2018",
+      "url": "",
+      "summary": "Deleo A.A., Salviato M."
+    },
+    {
+      "name": "Deployable Structures Constructed from Composite Origami",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2018",
+      "url": "",
+      "summary": "O'Neil J., Deleo A.A., Yasuda H., Salviato M., Yang J."
+    },
+    {
+      "name": "Cohesive Modeling of Fracture in Composites: Numerical Investigation of the Effects of the Cohesive Law on Size Effect",
+      "publisher": "ASC Conference Proceedings",
+      "releaseDate": "2018",
+      "url": "",
+      "summary": "Das A., Deleo A.A., Salviato M."
+    },
+    {
+      "name": "Multi-Axial Fatigue Failure Behavior of Notched GFRP Laminates",
+      "publisher": "SAMPE Conference Proceedings",
+      "releaseDate": "2018",
+      "url": "",
+      "summary": "Qiao Y., Deleo A.A., Liao K., Salviato M."
+    },
+    {
+      "name": "Composite Origami: Foldable Structures Based on Tachi-Miura-Polyhedron (TMP) Origami Architecture",
+      "publisher": "SAMPE Conference Proceedings",
+      "releaseDate": "2018",
+      "url": "",
+      "summary": "Deleo A.A., O'Neil J., Yasuda H., Salviato M., Yang J."
     }
   ],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "MARS Finite Element Solver",
+      "summary": "Development and maintenance of a modern C++ finite element framework for computational mechanics research and university teaching",
+      "highlights": [
+        "Modern C++23 architecture",
+        "Physics-informed machine learning integration",
+        "Cross-platform support (Linux, Windows, macOS)"
+      ],
+      "startDate": "2023-08-01",
+      "url": ""
+    },
+    {
+      "name": "FastDM4C - Discrete Model for Composites",
+      "summary": "Fast and efficient discrete modeling framework for simulating damage and fracture in composite materials",
+      "highlights": [
+        "Mesoscale modeling of fiber-matrix interactions",
+        "High-performance computing optimization",
+        "Application to additive manufacturing"
+      ],
+      "startDate": "2019-01-01",
+      "endDate": "2023-09-01",
+      "url": ""
     }
   ]
 }
