@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://tonideleo.github.io/sitemap.xml
+Sitemap: https://www.tonideleo.com/sitemap.xml
