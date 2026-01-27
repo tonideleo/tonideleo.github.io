@@ -18,7 +18,9 @@ function addParticleToggle() {
   // Add click handler
   button.addEventListener('click', function(e) {
     e.preventDefault();
-    const newState = !getParticlesPreference();
+    const currentState = getParticlesPreference();
+    const newState = !currentState;
+    console.log('Particle toggle clicked, current:', currentState, 'new:', newState);
     setParticlesPreference(newState);
     updateParticleState(newState, true); // true = animate transition
     updateButtonState(button, newState);
@@ -28,8 +30,12 @@ function addParticleToggle() {
 function createToggleButton() {
   const button = document.createElement('div');
   button.id = 'particle-toggle';
-  button.innerHTML = '<i class="ti ti-sparkles"></i>';
-  button.className = getParticlesPreference() ? '' : 'disabled';
+  const enabled = getParticlesPreference();
+  button.innerHTML = `
+    <i class="ti ti-sparkles"></i>
+    <span class="toggle-text">${enabled ? 'Disable' : 'Enable'} Particles</span>
+  `;
+  button.className = enabled ? '' : 'disabled';
   button.style.cursor = 'pointer';
   button.title = 'Toggle Particles';
   return button;
@@ -57,10 +63,15 @@ function updateParticleState(enabled, animate) {
     container.style.opacity = '1';
     container.style.pointerEvents = 'auto';
 
-    // Reinitialize if pJSDom doesn't exist or particles were destroyed
-    if (typeof particlesJS !== 'undefined' &&
-        (typeof pJSDom === 'undefined' || pJSDom.length === 0)) {
-      initializeParticles();
+    // Always reinitialize when enabling (simpler and more reliable)
+    if (typeof window.particlesJS !== 'undefined') {
+      console.log('Reinitializing particles...', 'pJSDom before:', window.pJSDom);
+      // Clear container completely before reinitializing
+      container.innerHTML = '';
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        initializeParticles();
+      }, 50);
     }
   } else {
     // Hide particles
@@ -71,33 +82,41 @@ function updateParticleState(enabled, animate) {
     container.style.pointerEvents = 'none';
 
     // Destroy particles to save CPU (performance optimization)
-    if (typeof pJSDom !== 'undefined' && pJSDom.length > 0) {
-      pJSDom[0].pJS.fn.vendors.destroypJS();
-      pJSDom = [];
+    if (typeof window.pJSDom !== 'undefined' && window.pJSDom.length > 0 && window.pJSDom[0]) {
+      console.log('Destroying particles...');
+      window.pJSDom[0].pJS.fn.vendors.destroypJS();
+      // Don't manually clear pJSDom - let destroypJS handle it
+      // Clear the container after destruction
+      container.innerHTML = '';
     }
   }
 }
 
 function updateButtonState(button, enabled) {
+  const textElement = button.querySelector('.toggle-text');
   if (enabled) {
     button.classList.remove('disabled');
     button.style.opacity = '1';
+    if (textElement) textElement.textContent = 'Disable Particles';
   } else {
     button.classList.add('disabled');
     button.style.opacity = '0.5';
+    if (textElement) textElement.textContent = 'Enable Particles';
   }
 }
 
 function initializeParticles() {
   // Reload particles - matches particle-call-function.js logic
-  if (typeof particlesJS !== 'undefined') {
-    particlesJS.load('particles-js', '/assets/json/particles.json', function() {
-      console.log('Particles reinitialized');
+  console.log('initializeParticles called, particlesJS available:', typeof window.particlesJS !== 'undefined');
+  if (typeof window.particlesJS !== 'undefined') {
+    console.log('Calling particlesJS.load...');
+    window.particlesJS.load('particles-js', '/assets/json/particles.json', function() {
+      console.log('Particles reinitialized successfully, pJSDom:', window.pJSDom);
 
       // Apply current theme colors
       const theme = determineComputedTheme();
-      if (typeof pJSDom !== 'undefined' && pJSDom.length > 0) {
-        const particles = pJSDom[0].pJS.particles;
+      if (typeof window.pJSDom !== 'undefined' && window.pJSDom.length > 0) {
+        const particles = window.pJSDom[0].pJS.particles;
         if (theme === "dark") {
           particles.color.value = '#ffffff';
           particles.line_linked.color = '#ffffff';
@@ -105,9 +124,14 @@ function initializeParticles() {
           particles.color.value = '#000000';
           particles.line_linked.color = '#000000';
         }
-        pJSDom[0].pJS.fn.particlesRefresh();
+        window.pJSDom[0].pJS.fn.particlesRefresh();
+        console.log('Theme colors applied');
+      } else {
+        console.warn('pJSDom not available after load');
       }
     });
+  } else {
+    console.error('particlesJS library not available');
   }
 }
 

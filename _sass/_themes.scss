@@ -183,16 +183,32 @@ html[data-theme-setting="light"] {
   height: $particle-toggle-height;
   width: $particle-toggle-width;
   z-index: $particle-toggle-z-index;
-  border-radius: 50%;
+  border-radius: $particle-toggle-border-radius;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   position: fixed;
   transition: bottom 0.2s, opacity 0.2s, transform 0.2s;
   user-select: none;
-  font-size: 20px;
+  padding: 8px 6px;
+
+  i {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .toggle-text {
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
 
   &:hover {
     opacity: 0.9;

@@ -32,19 +32,19 @@ let applyTheme = () => {
   updateCalendarUrl();
 
   // Update particle colors if particles.js is loaded AND enabled
-  if (typeof pJSDom !== "undefined" && pJSDom.length > 0) {
+  if (typeof window.pJSDom !== "undefined" && window.pJSDom.length > 0) {
     const particlesEnabled = localStorage.getItem('particles-enabled');
     const shouldShow = particlesEnabled === null ? true : particlesEnabled === 'true';
 
     if (shouldShow) {
       if (theme === "dark") {
-        pJSDom[0].pJS.particles.color.value = '#ffffff';
-        pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
+        window.pJSDom[0].pJS.particles.color.value = '#ffffff';
+        window.pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
       } else {
-        pJSDom[0].pJS.particles.color.value = '#000000';
-        pJSDom[0].pJS.particles.line_linked.color = '#000000';
+        window.pJSDom[0].pJS.particles.color.value = '#000000';
+        window.pJSDom[0].pJS.particles.line_linked.color = '#000000';
       }
-      pJSDom[0].pJS.fn.particlesRefresh();
+      window.pJSDom[0].pJS.fn.particlesRefresh();
     }
   }
 

@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Load particles configuration and set initial colors based on current theme
-  particlesJS.load('particles-js', '/assets/json/particles.json', function() {
+  window.particlesJS.load('particles-js', '/assets/json/particles.json', function() {
       console.log('callback - particles.js config loaded');
 
       // Set particle colors based on the current computed theme
       const theme = determineComputedTheme();
-      const particles = pJSDom[0].pJS.particles;
+      const particles = window.pJSDom[0].pJS.particles;
 
       if (theme === "dark") {
           particles.color.value = '#ffffff';
@@ -30,6 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Refresh particles.js settings
-      pJSDom[0].pJS.fn.particlesRefresh();
+      window.pJSDom[0].pJS.fn.particlesRefresh();
   });
 });
