@@ -318,6 +318,9 @@
   </script>
 {% endif %}
 
+<!-- Particle Toggle -->
+{% include scripts/particle_toggle.liquid %}
+
 {% if site.search_enabled %}
   <!-- Search -->
   <script type="module" src="{{ '/assets/js/search/ninja-keys.min.js' | relative_url | bust_file_cache }}"></script>

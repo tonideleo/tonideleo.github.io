@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Check if particles should be shown based on localStorage preference
+  const particlesEnabled = localStorage.getItem('particles-enabled');
+  const shouldShow = particlesEnabled === null ? true : particlesEnabled === 'true';
+
+  const container = document.getElementById('particles-js');
+  if (!container) return;
+
+  // Set initial visibility based on user preference
+  if (!shouldShow) {
+    container.style.opacity = '0';
+    container.style.pointerEvents = 'none';
+    return; // Don't initialize if disabled
+  }
+
   // Load particles configuration and set initial colors based on current theme
   particlesJS.load('particles-js', '/assets/json/particles.json', function() {
       console.log('callback - particles.js config loaded');

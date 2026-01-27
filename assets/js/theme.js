@@ -31,16 +31,21 @@ let applyTheme = () => {
   setSearchTheme(theme);
   updateCalendarUrl();
 
-  // Update particle colors if particles.js is loaded
+  // Update particle colors if particles.js is loaded AND enabled
   if (typeof pJSDom !== "undefined" && pJSDom.length > 0) {
-    if (theme === "dark") {
-      pJSDom[0].pJS.particles.color.value = '#ffffff';
-      pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
-    } else {
-      pJSDom[0].pJS.particles.color.value = '#000000';
-      pJSDom[0].pJS.particles.line_linked.color = '#000000';
+    const particlesEnabled = localStorage.getItem('particles-enabled');
+    const shouldShow = particlesEnabled === null ? true : particlesEnabled === 'true';
+
+    if (shouldShow) {
+      if (theme === "dark") {
+        pJSDom[0].pJS.particles.color.value = '#ffffff';
+        pJSDom[0].pJS.particles.line_linked.color = '#ffffff';
+      } else {
+        pJSDom[0].pJS.particles.color.value = '#000000';
+        pJSDom[0].pJS.particles.line_linked.color = '#000000';
+      }
+      pJSDom[0].pJS.fn.particlesRefresh();
     }
-    pJSDom[0].pJS.fn.particlesRefresh();
   }
 
   // if mermaid is not defined, do nothing
