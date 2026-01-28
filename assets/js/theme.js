@@ -28,6 +28,7 @@ let applyTheme = () => {
   transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
+  setRemark42Theme(theme);
   setSearchTheme(theme);
   updateCalendarUrl();
 
@@ -129,6 +130,12 @@ let setGiscusTheme = (theme) => {
       theme: theme,
     },
   });
+};
+
+let setRemark42Theme = (theme) => {
+  if (window.REMARK42) {
+    window.REMARK42.changeTheme(theme);
+  }
 };
 
 let addMermaidZoom = (records, observer) => {

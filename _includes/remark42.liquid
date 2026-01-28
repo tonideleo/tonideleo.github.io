@@ -1,0 +1,25 @@
+<div
+  id="remark42"
+  {% if page.layout == 'post' %}
+    style="max-width: {{ site.max_width }}; margin: 0 auto;"
+  {% endif %}
+>
+  {% if page.layout == 'post' %}
+    <br>
+  {% endif %}
+
+  {% if site.remark42.host %}
+    <script defer src="{{ '/assets/js/remark42-setup.js' | relative_url }}"></script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="{{ site.remark42.host }}">comments powered by Remark42.</a>
+    </noscript>
+  {% else %}
+    {% capture remark42_warning %}
+> ##### Remark42 comments misconfigured
+> Please set the `host` value in your Remark42 configuration in `_config.yml`.
+{: .block-danger }
+    {% endcapture %}
+    {{ remark42_warning | markdownify }}
+  {% endif %}
+</div>
