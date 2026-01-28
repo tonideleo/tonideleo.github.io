@@ -40,6 +40,7 @@ repo_trophies:
 # -----------------------------------------------------------------------------
 
 particle_js: true # Set the use of particle JS
+particle_js_toggle: true # Enable particle toggle widget (requires particle_js: true)
 simple_parallax_js: false # Set the use of Simple Parallax JS
 
 # External service URLs for repository page
@@ -214,6 +215,7 @@ exclude:
   - vendor
   - _posts_archive
   - _projects_archive
+  - _news_archive
 keep_files:
   - CNAME
   - .nojekyll

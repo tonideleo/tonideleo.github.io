@@ -27,6 +27,13 @@
     0.4
   );
   --global-back-to-top-text-color: #{$white-color};
+  --global-particle-toggle-bg-color: rgba(
+    #{color.channel($black-color, "red", $space: rgb)},
+    #{color.channel($black-color, "green", $space: rgb)},
+    #{color.channel($black-color, "blue", $space: rgb)},
+    0.4
+  );
+  --global-particle-toggle-text-color: #{$white-color};
   --global-newsletter-bg-color: #{$white-color};
   --global-newsletter-text-color: #{$black-color};
 
@@ -98,6 +105,13 @@ html[data-theme="dark"] {
     0.5
   );
   --global-back-to-top-text-color: #{$black-color};
+  --global-particle-toggle-bg-color: rgba(
+    #{color.channel($white-color, "red", $space: rgb)},
+    #{color.channel($white-color, "green", $space: rgb)},
+    #{color.channel($white-color, "blue", $space: rgb)},
+    0.5
+  );
+  --global-particle-toggle-text-color: #{$black-color};
   --global-newsletter-bg-color: #{$grey-color-light};
   --global-newsletter-text-color: #{$grey-color-dark};
 
@@ -157,5 +171,51 @@ html[data-theme-setting="light"] {
     padding-left: 10px;
     padding-top: 12px;
     display: block;
+  }
+}
+
+// Particle Toggle button styling
+#particle-toggle {
+  color: var(--global-particle-toggle-text-color);
+  background: var(--global-particle-toggle-bg-color);
+  bottom: $particle-toggle-bottom;
+  left: $particle-toggle-left;
+  height: $particle-toggle-height;
+  width: $particle-toggle-width;
+  z-index: $particle-toggle-z-index;
+  border-radius: $particle-toggle-border-radius;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: fixed;
+  transition: bottom 0.2s, opacity 0.2s, transform 0.2s;
+  user-select: none;
+  padding: 8px 6px;
+
+  i {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .toggle-text {
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+
+  &.particles-off {
+    opacity: 0.5;
   }
 }

@@ -29,7 +29,7 @@
   background-size: cover;
   background-position: 50% 50%;
   z-index: -10;
-  animation: fadein 2s ease-in;
+  opacity: 0; // Start invisible - JavaScript controls fade-in timing
 }
 
 body {

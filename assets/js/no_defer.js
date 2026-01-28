@@ -1,5 +1,5 @@
 // add bootstrap classes to tables
-$(document).ready(function () {
+function initTables() {
   $("table").each(function () {
     if (determineComputedTheme() == "dark") {
       $(this).addClass("table-dark");
@@ -21,4 +21,9 @@ $(document).ready(function () {
       $(this).addClass("table-hover");
     }
   });
-});
+}
+
+$(document).ready(initTables);
+
+// Turbo support - reinitialize tables on navigation
+document.addEventListener('turbo:load', initTables);
