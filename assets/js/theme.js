@@ -296,19 +296,26 @@ let determineComputedTheme = () => {
   }
 };
 
+// Attach click listener to theme toggle button
+let attachThemeToggle = () => {
+  const mode_toggle = document.getElementById("light-toggle");
+  if (mode_toggle) {
+    // Remove existing listener to prevent duplicates on Turbo navigation
+    mode_toggle.removeEventListener("click", toggleThemeSetting);
+    mode_toggle.addEventListener("click", toggleThemeSetting);
+  }
+};
+
 let initTheme = () => {
   let themeSetting = determineThemeSetting();
 
   setThemeSetting(themeSetting);
 
   // Add event listener to the theme toggle button.
-  document.addEventListener("DOMContentLoaded", function () {
-    const mode_toggle = document.getElementById("light-toggle");
+  document.addEventListener("DOMContentLoaded", attachThemeToggle);
 
-    mode_toggle.addEventListener("click", function () {
-      toggleThemeSetting();
-    });
-  });
+  // Turbo support - reattach after navigation
+  document.addEventListener("turbo:load", attachThemeToggle);
 
   // Add event listener to the system theme preference change.
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {

@@ -1,6 +1,9 @@
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
-document.addEventListener("DOMContentLoaded", function () {
+function initBibsearch() {
+  const bibsearchInput = document.getElementById("bibsearch");
+  if (!bibsearchInput) return; // Not on a page with bibliography
+
   // actual bibsearch logic
   const filterItems = (searchTerm) => {
     document.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
@@ -52,19 +55,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const updateInputField = () => {
     const hashValue = decodeURIComponent(window.location.hash.substring(1)); // Remove the '#' character
-    document.getElementById("bibsearch").value = hashValue;
+    bibsearchInput.value = hashValue;
     filterItems(hashValue);
   };
 
   // Sensitive search. Only start searching if there's been no input for 300 ms
   let timeoutId;
-  document.getElementById("bibsearch").addEventListener("input", function () {
+  // Remove existing listener to prevent duplicates on Turbo navigation
+  const newInput = bibsearchInput.cloneNode(true);
+  bibsearchInput.parentNode.replaceChild(newInput, bibsearchInput);
+
+  newInput.addEventListener("input", function () {
     clearTimeout(timeoutId); // Clear the previous timeout
     const searchTerm = this.value.toLowerCase();
     timeoutId = setTimeout(filterItems(searchTerm), 300);
   });
 
+  window.removeEventListener("hashchange", updateInputField);
   window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes
 
   updateInputField(); // Update filter when page loads
-});
+}
+
+document.addEventListener("DOMContentLoaded", initBibsearch);
+
+// Turbo support
+document.addEventListener("turbo:load", initBibsearch);

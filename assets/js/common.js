@@ -1,16 +1,17 @@
-$(document).ready(function () {
+function initCommon() {
   // add toggle functionality to abstract, award and bibtex buttons
-  $("a.abstract").click(function () {
+  // Use .off().on() to prevent duplicate handlers on Turbo navigation
+  $("a.abstract").off('click').on('click', function () {
     $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
     $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
   });
-  $("a.award").click(function () {
+  $("a.award").off('click').on('click', function () {
     $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".award.hidden").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
   });
-  $("a.bibtex").click(function () {
+  $("a.bibtex").off('click').on('click', function () {
     $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
     $(this).parent().parent().find(".bibtex.hidden").toggleClass("open");
@@ -57,4 +58,10 @@ $(document).ready(function () {
   $('[data-toggle="popover"]').popover({
     trigger: "hover",
   });
-});
+}
+
+// Initialize on document ready
+$(document).ready(initCommon);
+
+// Turbo support - reinitialize on navigation
+document.addEventListener('turbo:load', initCommon);

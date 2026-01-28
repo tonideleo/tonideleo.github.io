@@ -13,6 +13,12 @@ function addParticleToggle() {
     return;
   }
 
+  // Check if button already exists (Turbo navigation)
+  if (document.getElementById('particle-toggle')) {
+    console.log('[particle-toggle] Button already exists, skipping creation');
+    return;
+  }
+
   // Create button
   const button = createToggleButton();
   document.body.appendChild(button);
@@ -41,6 +47,8 @@ function addParticleToggle() {
 function createToggleButton() {
   const button = document.createElement('div');
   button.id = 'particle-toggle';
+  // Mark as permanent so Turbo doesn't remove it on navigation
+  button.setAttribute('data-turbo-permanent', '');
   const enabled = getParticlesPreference();
   button.innerHTML = `
     <i class="ti ti-sparkles"></i>
@@ -215,9 +223,21 @@ function initializeParticles(animate) {
   });
 }
 
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', addParticleToggle);
-} else {
+// Safe initialization that checks if button already exists
+function safeInit() {
+  if (document.getElementById('particle-toggle')) {
+    console.log('[particle-toggle] Button already exists');
+    return;
+  }
   addParticleToggle();
 }
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', safeInit);
+} else {
+  safeInit();
+}
+
+// Turbo support - button persists via data-turbo-permanent
+document.addEventListener('turbo:load', safeInit);
