@@ -44,6 +44,7 @@
       if (window.REMARK42) {
         // Turbo SPA re-initialization: embed script already loaded from a previous page
         try { window.REMARK42.destroy(); } catch (e) {}
+        window.remark_config.node = document.getElementById('remark42');
         window.REMARK42.createInstance(window.remark_config);
       } else {
         // First page load: inject the embed script
