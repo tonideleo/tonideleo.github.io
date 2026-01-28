@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Trigger smooth fade-in after canvas is ready
     requestAnimationFrame(() => {
-      container.style.transition = 'opacity 2s ease-in';
+      container.style.transition = 'opacity 4s ease-in';
       container.style.opacity = '1';
     });
   });

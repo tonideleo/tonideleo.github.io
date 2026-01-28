@@ -215,6 +215,7 @@ exclude:
   - vendor
   - _posts_archive
   - _projects_archive
+  - _news_archive
 keep_files:
   - CNAME
   - .nojekyll
