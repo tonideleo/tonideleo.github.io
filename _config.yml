@@ -137,7 +137,7 @@ remark42:
   locale: en
   show_email_subscription: false
   show_rss_subscription: false
-  no_footer: false
+  no_footer: true
   max_shown_comments: 15
 
 # Disqus comments (DEPRECATED)
