@@ -1,15 +1,22 @@
 "use strict";
 
+// Debug: confirm script loads
+console.log('[particle-toggle] Script loaded');
+
 function addParticleToggle() {
+  console.log('[particle-toggle] addParticleToggle called');
+
   // Check if particles are enabled via config
   const particlesContainer = document.getElementById('particles-js');
   if (!particlesContainer) {
-    return; // Particles not enabled in config
+    console.log('[particle-toggle] No particles container found');
+    return;
   }
 
   // Create button
   const button = createToggleButton();
   document.body.appendChild(button);
+  console.log('[particle-toggle] Button created and added to body');
 
   // Initialize state from localStorage
   const particlesEnabled = getParticlesPreference();
@@ -17,12 +24,16 @@ function addParticleToggle() {
 
   // Add click handler
   button.addEventListener('click', function(e) {
+    console.log('[particle-toggle] Button clicked!');
     e.preventDefault();
+    e.stopPropagation();
+
     const currentState = getParticlesPreference();
     const newState = !currentState;
-    console.log('Particle toggle clicked, current:', currentState, 'new:', newState);
+    console.log('[particle-toggle] Toggling from', currentState, 'to', newState);
+
     setParticlesPreference(newState);
-    updateParticleState(newState, true); // true = animate transition
+    updateParticleState(newState, true);
     updateButtonState(button, newState);
   });
 }
@@ -35,15 +46,16 @@ function createToggleButton() {
     <i class="ti ti-sparkles"></i>
     <span class="toggle-text">${enabled ? 'Disable' : 'Enable'} Particles</span>
   `;
-  button.className = enabled ? '' : 'disabled';
+  // Use custom class name to avoid Bootstrap's .disabled which has pointer-events: none
+  button.className = enabled ? '' : 'particles-off';
   button.style.cursor = 'pointer';
+  button.style.pointerEvents = 'auto';
   button.title = 'Toggle Particles';
   return button;
 }
 
 function getParticlesPreference() {
   const pref = localStorage.getItem('particles-enabled');
-  // Default to true if not set
   return pref === null ? true : pref === 'true';
 }
 
@@ -51,72 +63,130 @@ function setParticlesPreference(enabled) {
   localStorage.setItem('particles-enabled', enabled.toString());
 }
 
+function ensurePJSDomArray() {
+  if (!window.pJSDom || !Array.isArray(window.pJSDom)) {
+    window.pJSDom = [];
+  }
+}
+
+function cleanupParticles() {
+  console.log('[particle-toggle] cleanupParticles called');
+  const container = document.getElementById('particles-js');
+
+  ensurePJSDomArray();
+  if (window.pJSDom.length > 0 && window.pJSDom[0]) {
+    try {
+      const pJS = window.pJSDom[0].pJS;
+      if (pJS && pJS.fn) {
+        if (pJS.fn.drawAnimFrame) {
+          cancelAnimationFrame(pJS.fn.drawAnimFrame);
+        }
+        if (pJS.fn.checkAnimFrame) {
+          cancelAnimationFrame(pJS.fn.checkAnimFrame);
+        }
+      }
+    } catch (e) {
+      console.log('[particle-toggle] Cleanup error (ignored):', e);
+    }
+  }
+
+  if (container) {
+    container.innerHTML = '';
+  }
+
+  window.pJSDom = [];
+  console.log('[particle-toggle] Cleanup complete, pJSDom reset');
+}
+
 function updateParticleState(enabled, animate) {
+  console.log('[particle-toggle] updateParticleState:', enabled, animate);
   const container = document.getElementById('particles-js');
   if (!container) return;
 
   if (enabled) {
-    // Show particles
-    if (animate) {
-      container.style.transition = 'opacity 0.3s ease-in-out';
-    }
-    container.style.opacity = '1';
-    container.style.pointerEvents = 'auto';
-
-    // Always reinitialize when enabling (simpler and more reliable)
-    if (typeof window.particlesJS !== 'undefined') {
-      console.log('Reinitializing particles...', 'pJSDom before:', window.pJSDom);
-      // Clear container completely before reinitializing
-      container.innerHTML = '';
-      // Small delay to ensure DOM is ready
-      setTimeout(() => {
-        initializeParticles();
-      }, 50);
-    }
-  } else {
-    // Hide particles
-    if (animate) {
-      container.style.transition = 'opacity 0.3s ease-in-out';
-    }
     container.style.opacity = '0';
-    container.style.pointerEvents = 'none';
+    container.style.pointerEvents = 'auto';
+    container.style.transition = '';
 
-    // Destroy particles to save CPU (performance optimization)
-    if (typeof window.pJSDom !== 'undefined' && window.pJSDom.length > 0 && window.pJSDom[0]) {
-      console.log('Destroying particles...');
-      window.pJSDom[0].pJS.fn.vendors.destroypJS();
-      // Don't manually clear pJSDom - let destroypJS handle it
-      // Clear the container after destruction
-      container.innerHTML = '';
+    cleanupParticles();
+
+    setTimeout(function() {
+      console.log('[particle-toggle] Calling initializeParticles');
+      initializeParticles(animate);
+    }, 100);
+  } else {
+    if (animate) {
+      container.style.transition = 'opacity 0.3s ease-in-out';
+      container.style.opacity = '0';
+
+      setTimeout(function() {
+        cleanupParticles();
+        container.style.pointerEvents = 'none';
+      }, 350);
+    } else {
+      container.style.opacity = '0';
+      container.style.pointerEvents = 'none';
+      cleanupParticles();
     }
   }
 }
 
 function updateButtonState(button, enabled) {
+  if (!button) return;
+
   const textElement = button.querySelector('.toggle-text');
   if (enabled) {
-    button.classList.remove('disabled');
+    // Use custom class name, NOT 'disabled' (Bootstrap conflict)
+    button.className = '';
     button.style.opacity = '1';
     if (textElement) textElement.textContent = 'Disable Particles';
   } else {
-    button.classList.add('disabled');
+    button.className = 'particles-off';
     button.style.opacity = '0.5';
     if (textElement) textElement.textContent = 'Enable Particles';
   }
+
+  // Always ensure button is clickable
+  button.style.pointerEvents = 'auto';
 }
 
-function initializeParticles() {
-  // Reload particles - matches particle-call-function.js logic
-  console.log('initializeParticles called, particlesJS available:', typeof window.particlesJS !== 'undefined');
-  if (typeof window.particlesJS !== 'undefined') {
-    console.log('Calling particlesJS.load...');
-    window.particlesJS.load('particles-js', '/assets/json/particles.json', function() {
-      console.log('Particles reinitialized successfully, pJSDom:', window.pJSDom);
+function initializeParticles(animate) {
+  console.log('[particle-toggle] initializeParticles called');
+  const container = document.getElementById('particles-js');
+  if (!container) {
+    console.log('[particle-toggle] No container');
+    return;
+  }
 
-      // Apply current theme colors
+  if (typeof window.particlesJS === 'undefined') {
+    console.error('[particle-toggle] particlesJS not available!');
+    return;
+  }
+
+  ensurePJSDomArray();
+  console.log('[particle-toggle] pJSDom before load:', window.pJSDom);
+
+  container.style.opacity = '0';
+  container.style.transition = '';
+
+  window.particlesJS.load('particles-js', '/assets/json/particles.json', function() {
+    console.log('[particle-toggle] particlesJS.load callback fired');
+    console.log('[particle-toggle] pJSDom after load:', window.pJSDom);
+
+    ensurePJSDomArray();
+
+    if (window.pJSDom.length === 0) {
+      console.error('[particle-toggle] Particles failed to initialize - pJSDom empty');
+      return;
+    }
+
+    try {
       const theme = determineComputedTheme();
-      if (typeof window.pJSDom !== 'undefined' && window.pJSDom.length > 0) {
-        const particles = window.pJSDom[0].pJS.particles;
+      const pJS = window.pJSDom[0].pJS;
+
+      if (pJS && pJS.particles) {
+        const particles = pJS.particles;
+
         if (theme === "dark") {
           particles.color.value = '#ffffff';
           particles.line_linked.color = '#ffffff';
@@ -124,15 +194,25 @@ function initializeParticles() {
           particles.color.value = '#000000';
           particles.line_linked.color = '#000000';
         }
-        window.pJSDom[0].pJS.fn.particlesRefresh();
-        console.log('Theme colors applied');
-      } else {
-        console.warn('pJSDom not available after load');
+
+        if (pJS.particles.array) {
+          pJS.particles.array.forEach(function(p) {
+            p.color.value = particles.color.value;
+          });
+        }
       }
+    } catch (e) {
+      console.error('[particle-toggle] Error applying theme:', e);
+    }
+
+    requestAnimationFrame(function() {
+      console.log('[particle-toggle] Fading in particles');
+      if (animate !== false) {
+        container.style.transition = 'opacity 2s ease-in';
+      }
+      container.style.opacity = '1';
     });
-  } else {
-    console.error('particlesJS library not available');
-  }
+  });
 }
 
 // Initialize when DOM is ready

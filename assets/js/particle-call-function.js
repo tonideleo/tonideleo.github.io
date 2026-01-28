@@ -13,23 +13,35 @@ document.addEventListener("DOMContentLoaded", function () {
     return; // Don't initialize if disabled
   }
 
+  // Start with opacity 0 for smooth fade-in
+  container.style.opacity = '0';
+
   // Load particles configuration and set initial colors based on current theme
   window.particlesJS.load('particles-js', '/assets/json/particles.json', function() {
-      console.log('callback - particles.js config loaded');
+    // Set particle colors based on the current computed theme
+    const theme = determineComputedTheme();
+    const pJS = window.pJSDom[0].pJS;
+    const particles = pJS.particles;
 
-      // Set particle colors based on the current computed theme
-      const theme = determineComputedTheme();
-      const particles = window.pJSDom[0].pJS.particles;
+    if (theme === "dark") {
+      particles.color.value = '#ffffff';
+      particles.line_linked.color = '#ffffff';
+    } else {
+      particles.color.value = '#000000';
+      particles.line_linked.color = '#000000';
+    }
 
-      if (theme === "dark") {
-          particles.color.value = '#ffffff';
-          particles.line_linked.color = '#ffffff';
-      } else {
-          particles.color.value = '#000000';
-          particles.line_linked.color = '#000000';
-      }
+    // Update existing particles with new colors (avoid particlesRefresh which causes pop-in)
+    if (pJS.particles.array) {
+      pJS.particles.array.forEach(function(p) {
+        p.color.value = particles.color.value;
+      });
+    }
 
-      // Refresh particles.js settings
-      window.pJSDom[0].pJS.fn.particlesRefresh();
+    // Trigger smooth fade-in after canvas is ready
+    requestAnimationFrame(() => {
+      container.style.transition = 'opacity 2s ease-in';
+      container.style.opacity = '1';
+    });
   });
 });
