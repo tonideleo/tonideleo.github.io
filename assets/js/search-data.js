@@ -77,7 +77,22 @@ ninja.data = [{
             },},{id: "news-finally-found-the-time-to-dust-off-my-personal-website-and-start-adding-some-stuff",
           title: 'Finally found the time to dust-off my personal website and start adding some...',
           description: "",
-          section: "News",},{id: "teachings-data-science-fundamentals",
+          section: "News",},{id: "news-added-commenting-capability-to-the-website",
+          title: 'Added commenting capability to the website!',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "projects-project-1",
+          title: 'project 1',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project/";
+            },},{id: "projects-project-2",
+          title: 'project 2',
+          description: "a project with a background image and giscus comments",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
+            },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
           section: "Teachings",handler: () => {
