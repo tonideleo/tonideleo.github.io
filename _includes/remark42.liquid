@@ -1,0 +1,77 @@
+<div
+  id="remark42"
+  {% if page.layout == 'post' %}
+    style="max-width: {{ site.max_width }}; margin: 1.5rem auto 0;"
+  {% endif %}
+>
+</div>
+
+{% if site.remark42.host %}
+  <script>
+    (function () {
+      function determineRemark42Theme() {
+        {% if site.enable_darkmode %}
+          var theme =
+            localStorage.getItem("theme") ||
+            document.documentElement.getAttribute("data-theme") ||
+            "system";
+
+          if (theme === "dark") return "dark";
+          if (theme === "light") return "light";
+
+          return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        {% else %}
+          return "light";
+        {% endif %}
+      }
+
+      window.remark_config = {
+        host: "{{ site.remark42.host }}",
+        site_id: "{{ site.remark42.site_id | default: 'remark' }}",
+        url: window.location.origin + window.location.pathname,
+        theme: determineRemark42Theme(),
+        locale: "{{ site.remark42.locale | default: 'en' }}",
+        show_email_subscription: {% if site.remark42.show_email_subscription %}true{% else %}false{% endif %},
+        show_rss_subscription: {% if site.remark42.show_rss_subscription %}true{% else %}false{% endif %},
+        no_footer: {% if site.remark42.no_footer %}true{% else %}false{% endif %},
+        max_shown_comments: {{ site.remark42.max_shown_comments | default: 15 }},
+        components: ["embed"],
+      };
+
+      window.remark_config.node = document.getElementById('remark42');
+      if (window.remark_config.node) {
+        window.remark_config.node.innerHTML = "";
+      }
+
+      if (window.REMARK42) {
+        // Turbo SPA re-initialization: embed script already loaded from a previous page
+        try { window.REMARK42.destroy(); } catch (e) {}
+        window.REMARK42.createInstance(window.remark_config);
+      } else {
+        // First page load: inject the embed script
+        !function (e, n) {
+          for (var o = 0; o < e.length; o++) {
+            var r = n.createElement("script"),
+              c = ".js",
+              d = n.head || n.body;
+            "noModule" in r ? ((r.type = "module"), (c = ".mjs")) : (r.async = !0);
+            r.defer = !0;
+            r.src = remark_config.host + "/web/" + e[o] + c;
+            d.appendChild(r);
+          }
+        }(remark_config.components || ["embed"], document);
+      }
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="{{ site.remark42.host }}">comments powered by Remark42.</a>
+  </noscript>
+{% else %}
+  {% capture remark42_warning %}
+> ##### Remark42 comments misconfigured
+> Please set the `host` value in your Remark42 configuration in `_config.yml`.
+{: .block-danger }
+  {% endcapture %}
+  {{ remark42_warning | markdownify }}
+{% endif %}

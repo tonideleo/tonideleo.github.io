@@ -28,26 +28,11 @@ let applyTheme = () => {
   transTheme();
   setHighlight(theme);
   setGiscusTheme(theme);
+  setRemark42Theme(theme);
   setSearchTheme(theme);
   updateCalendarUrl();
 
-  // Update particle colors if particles.js is loaded AND enabled
-  if (window.pJSDom && Array.isArray(window.pJSDom) && window.pJSDom.length > 0 && window.pJSDom[0]?.pJS) {
-    const particlesEnabled = localStorage.getItem('particles-enabled');
-    const shouldShow = particlesEnabled === null ? true : particlesEnabled === 'true';
-
-    if (shouldShow) {
-      const pJS = window.pJSDom[0].pJS;
-      if (theme === "dark") {
-        pJS.particles.color.value = '#ffffff';
-        pJS.particles.line_linked.color = '#ffffff';
-      } else {
-        pJS.particles.color.value = '#000000';
-        pJS.particles.line_linked.color = '#000000';
-      }
-      pJS.fn.particlesRefresh();
-    }
-  }
+  refreshParticlesTheme(theme);
 
   // if mermaid is not defined, do nothing
   if (typeof mermaid !== "undefined") {
@@ -128,6 +113,52 @@ let setGiscusTheme = (theme) => {
     setConfig: {
       theme: theme,
     },
+  });
+};
+
+let setRemark42Theme = (theme) => {
+  if (window.REMARK42) {
+    window.REMARK42.changeTheme(theme);
+  }
+};
+
+let refreshParticlesTheme = (theme) => {
+  if (!window.pJSDom || !Array.isArray(window.pJSDom) || window.pJSDom.length === 0) {
+    return;
+  }
+
+  const particlesEnabled = localStorage.getItem('particles-enabled');
+  const shouldShow = particlesEnabled === null ? true : particlesEnabled === 'true';
+  if (!shouldShow) return;
+
+  const color = theme === "dark" ? '#ffffff' : '#000000';
+  const colorRgb = typeof hexToRgb === "function" ? hexToRgb(color) : null;
+
+  window.pJSDom.forEach((instance) => {
+    const pJS = instance?.pJS;
+    if (!pJS || !pJS.particles) return;
+
+    pJS.particles.color.value = color;
+    pJS.particles.line_linked.color = color;
+    if (colorRgb) {
+      pJS.particles.line_linked.color_rgb_line = colorRgb;
+    }
+
+    if (Array.isArray(pJS.particles.array)) {
+      pJS.particles.array.forEach((particle) => {
+        if (!particle || !particle.color) return;
+        particle.color.value = color;
+        if (colorRgb) {
+          particle.color.rgb = colorRgb;
+        }
+      });
+    }
+
+    if (pJS.fn && typeof pJS.fn.particlesDraw === "function") {
+      pJS.fn.particlesDraw();
+    } else if (pJS.fn && typeof pJS.fn.particlesRefresh === "function") {
+      pJS.fn.particlesRefresh();
+    }
   });
 };
 

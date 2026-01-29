@@ -6,6 +6,7 @@ description: A detailed guide on implementing the Jacobian matrix in implicit fi
 tags: code math
 categories: engineering
 related_posts: false
+remark42_comments: true
 ---
 
 I wrote this back in 2021 while working on gradient-based optimization techniques to calibrate non-linear material behaviors. It was a different time—before we could just ask an LLM to solve our problems for us.

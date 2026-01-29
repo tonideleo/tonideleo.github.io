@@ -129,6 +129,17 @@ giscus:
   emit_metadata: 0
   lang: en
 
+# Remark42 comments (self-hosted)
+# See https://remark42.com/docs/configuration/frontend/ for details.
+remark42:
+  host: https://comments.tonideleo.com # URL of your Remark42 instance
+  site_id: tonideleo # site ID configured in your Remark42 instance
+  locale: en
+  show_email_subscription: false
+  show_rss_subscription: false
+  no_footer: true
+  max_shown_comments: 15
+
 # Disqus comments (DEPRECATED)
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname

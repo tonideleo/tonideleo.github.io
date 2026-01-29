@@ -119,6 +119,9 @@
         {% if site.giscus.repo and page.giscus_comments %}
           {% include giscus.liquid %}
         {% endif %}
+        {% if site.remark42.host and page.remark42_comments %}
+          {% include remark42.liquid %}
+        {% endif %}
       </d-article>
     </div>
 
