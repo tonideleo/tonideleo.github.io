@@ -203,10 +203,8 @@ function initializeParticles(animate) {
           particles.line_linked.color = '#000000';
         }
 
-        if (pJS.particles.array) {
-          pJS.particles.array.forEach(function(p) {
-            p.color.value = particles.color.value;
-          });
+        if (pJS.fn && typeof pJS.fn.particlesRefresh === 'function') {
+          pJS.fn.particlesRefresh();
         }
       }
     } catch (e) {
