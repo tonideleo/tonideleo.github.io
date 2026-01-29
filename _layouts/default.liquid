@@ -55,8 +55,8 @@
     <!-- Particle JS -->
     {% if site.particle_js %}
       {% if site.particle_js == true %}
-        <script defer src={{ '/assets/js/particles.js' | relative_url }}></script>
-        <script defer src={{ '/assets/js/particle-call-function.js' | relative_url }}></script>
+        <script defer src={{ '/assets/js/particles.js' | relative_url }} data-turbo-eval="false"></script>
+        <script defer src={{ '/assets/js/particle-call-function.js' | relative_url }} data-turbo-eval="false"></script>
         <div id="particles-js" data-turbo-permanent></div>
       {% endif %}
     {% endif %}
