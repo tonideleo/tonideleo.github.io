@@ -82,7 +82,10 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "projects-project-1",
+            },},{id: "news-my-beautiful-second-daughter-is-born-on-a-stunning-full-moon-night",
+          title: 'My beautiful second daughter is born on a stunning full moon night!',
+          description: "",
+          section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
