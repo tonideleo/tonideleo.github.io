@@ -5,7 +5,7 @@
 - [ ] Particle.js animation visible and smooth
 - [ ] Theme toggle button works (light/dark/system)
 - [ ] Particle colors change with theme (black in light, white in dark)
-- [ ] Typed.js typewriter effect working on about page ("Borned in Italy", etc.)
+- [ ] Typed.js typewriter effect working on about page ("Born in Italy", etc.)
 - [ ] Profile picture displays correctly
 - [ ] Publications page loads
 - [ ] Publication preview images display (750px width)
