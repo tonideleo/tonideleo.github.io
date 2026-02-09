@@ -109,7 +109,7 @@ Once running, verify these features work:
 - [ ] Site loads at http://localhost:8080
 - [ ] **Particle.js**: Animated particles visible on homepage
 - [ ] **Theme toggle**: Click theme button, particles change color
-- [ ] **Typed.js**: Typewriter effect on about page ("Borned in Italy...")
+- [ ] **Typed.js**: Typewriter effect on about page ("Born in Italy...")
 - [ ] **Publications**: All 4 papers showing with wider columns
 - [ ] **CV page**: Centered PDF button with large icon
 - [ ] **Links**: Shake animation on hover

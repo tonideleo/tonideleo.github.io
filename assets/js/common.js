@@ -26,6 +26,7 @@ function initCommon() {
     });
     var navSelector = "#toc-sidebar";
     var $myNav = $(navSelector);
+    $myNav.empty();
     Toc.init($myNav);
     $("body").scrollspy({
       target: navSelector,

@@ -33,7 +33,7 @@ Successfully upgraded from **al-folio v0.11.0** (June 2024) to **v0.16.3** (Janu
 
 #### JavaScript Features
 - ✅ **Particle.js** - Animated background (theme-aware color switching)
-- ✅ **Typed.js** - Typewriter effect ("Borned in Italy", "Studied in Seattle", etc.)
+- ✅ **Typed.js** - Typewriter effect ("Born in Italy", "Studied in Seattle", etc.)
 - ✅ **Theme.js** - Custom particle color switching on theme toggle
 - ✅ **Simple Parallax JS** - Files present (currently disabled)
 
