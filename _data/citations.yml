@@ -1,16 +1,16 @@
 metadata:
-  last_updated: '2026-02-06'
+  last_updated: '2026-02-18'
 papers:
   -X6GqMsAAAAJ:2osOgNQ5qMEC:
     citations: 20
-    title: 'Aerogami: Composite origami structures as active aerodynamic Ccontrol'
+    title: 'Aerogami: Composite origami structures as active aerodynamic control'
     year: '2020'
   -X6GqMsAAAAJ:9yKSN-GCB0IC:
-    citations: 97
+    citations: 95
     title: Origami-based deployable structures made of carbon fiber reinforced polymer composites
     year: '2020'
   -X6GqMsAAAAJ:IjCSPb-OGe4C:
-    citations: 49
+    citations: 50
     title: A study on the multi-axial fatigue failure behavior of notched composite laminates
     year: '2019'
   -X6GqMsAAAAJ:LkGwnXOMwfcC:
@@ -31,11 +31,11 @@ papers:
     year: '2018'
   -X6GqMsAAAAJ:W7OEmFMy1HYC:
     citations: 1
-    title: ANALYSIS OF ADDITIVE MANUFACTURED STRUCTURAL JOINTS USING DISCRETE MODEL FOR COMPOSITES (DM4C)
+    title: Analysis of additive manufactured structural joints using discrete model for composites (DM4C)
     year: '2023'
   -X6GqMsAAAAJ:WF5omc3nYNoC:
     citations: 4
-    title: 'Discrete, Meso-Scale Modeling of Fiber-Reinforced Composites (DM4C): Application to Additive Manufacturing of Continuous Fiber Composites'
+    title: 'Discrete, meso-scale modeling of fiber-reinforced composites (DM4C): application to additive manufacturing of continuous fiber composites'
     year: '2022'
   -X6GqMsAAAAJ:YsMSGLbcyi4C:
     citations: 0
@@ -54,12 +54,12 @@ papers:
     title: INVESTIGATION OF THE EFFECT OF IN-PLANE WAVINESS ON THE MECHANICAL BEHAVIOR OF ADDITIVE MANUFACTURED COMPOSITE LAMINATES
     year: '2023'
   -X6GqMsAAAAJ:u5HHmVD_uO8C:
-    citations: 8
+    citations: 9
     title: Deployable structures constructed from composite origami
     year: '2018'
   -X6GqMsAAAAJ:ufrVoPGSRksC:
     citations: 3
-    title: Discrete Modeling and Machine Learning Assisted Calibration of 3D Printed Carbon Fiber Reinforced Plastics (CFRP) Structural Joints
+    title: Discrete modeling and machine learning assisted calibration of 3d printed carbon fiber reinforced plastics (CFRP) structural joints
     year: '2022'
   -X6GqMsAAAAJ:zYLM7Y9cAGgC:
     citations: 6
