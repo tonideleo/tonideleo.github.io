@@ -1,16 +1,16 @@
 metadata:
-  last_updated: '2026-03-30'
+  last_updated: '2026-05-18'
 papers:
   -X6GqMsAAAAJ:2osOgNQ5qMEC:
-    citations: 20
+    citations: 22
     title: 'Aerogami: Composite origami structures as active aerodynamic control'
     year: '2020'
   -X6GqMsAAAAJ:9yKSN-GCB0IC:
-    citations: 97
+    citations: 99
     title: Origami-based deployable structures made of carbon fiber reinforced polymer composites
     year: '2020'
   -X6GqMsAAAAJ:IjCSPb-OGe4C:
-    citations: 52
+    citations: 55
     title: A study on the multi-axial fatigue failure behavior of notched composite laminates
     year: '2019'
   -X6GqMsAAAAJ:LkGwnXOMwfcC:
@@ -30,7 +30,7 @@ papers:
     title: 'Composite origami: Foldable structures based on tachi-miura-polyhedron origami technique'
     year: '2018'
   -X6GqMsAAAAJ:W7OEmFMy1HYC:
-    citations: 1
+    citations: 2
     title: Analysis of additive manufactured structural joints using discrete model for composites (DM4C)
     year: '2023'
   -X6GqMsAAAAJ:WF5omc3nYNoC:
@@ -42,26 +42,26 @@ papers:
     title: A Fast and Efficient Discrete Model for Composites (FastDM4C)
     year: '2023'
   -X6GqMsAAAAJ:eQOLeE2rZwMC:
-    citations: 3
+    citations: 4
     title: To the mesoscale and beyond! capturing complex damage mechanisms in composites via simple, physics-based, discrete mathematical models of fibers and matrix
     year: '2023'
   -X6GqMsAAAAJ:qjMakFHDy7sC:
-    citations: 0
+    citations: 1
     title: 'FastDM4C: A Fast and Efficient Discrete Model for Composites'
     year: '2023'
   -X6GqMsAAAAJ:roLk4NBRz8UC:
-    citations: 0
+    citations: 1
     title: INVESTIGATION OF THE EFFECT OF IN-PLANE WAVINESS ON THE MECHANICAL BEHAVIOR OF ADDITIVE MANUFACTURED COMPOSITE LAMINATES
     year: '2023'
   -X6GqMsAAAAJ:u5HHmVD_uO8C:
-    citations: 9
+    citations: 10
     title: Deployable structures constructed from composite origami
     year: '2018'
   -X6GqMsAAAAJ:ufrVoPGSRksC:
-    citations: 3
+    citations: 4
     title: Discrete modeling and machine learning assisted calibration of 3d printed carbon fiber reinforced plastics (CFRP) structural joints
     year: '2022'
   -X6GqMsAAAAJ:zYLM7Y9cAGgC:
-    citations: 6
+    citations: 7
     title: A novel discrete, mesoscale modeling framework for the simulation of the damaging and fracturing behavior of composites
     year: '2022'
