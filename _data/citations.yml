@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-15'
+  last_updated: '2026-07-27'
 papers:
   -X6GqMsAAAAJ:2osOgNQ5qMEC:
     citations: 22
@@ -42,7 +42,7 @@ papers:
     title: A Fast and Efficient Discrete Model for Composites (FastDM4C)
     year: '2023'
   -X6GqMsAAAAJ:eQOLeE2rZwMC:
-    citations: 4
+    citations: 5
     title: To the mesoscale and beyond! capturing complex damage mechanisms in composites via simple, physics-based, discrete mathematical models of fibers and matrix
     year: '2023'
   -X6GqMsAAAAJ:qjMakFHDy7sC:
@@ -62,6 +62,6 @@ papers:
     title: Discrete modeling and machine learning assisted calibration of 3d printed carbon fiber reinforced plastics (CFRP) structural joints
     year: '2022'
   -X6GqMsAAAAJ:zYLM7Y9cAGgC:
-    citations: 7
+    citations: 8
     title: A novel discrete, mesoscale modeling framework for the simulation of the damaging and fracturing behavior of composites
     year: '2022'
