@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-07-27'
+  last_updated: '2026-08-03'
 papers:
   -X6GqMsAAAAJ:2osOgNQ5qMEC:
-    citations: 22
+    citations: 23
     title: 'Aerogami: Composite origami structures as active aerodynamic control'
     year: '2020'
   -X6GqMsAAAAJ:9yKSN-GCB0IC:
-    citations: 104
+    citations: 103
     title: Origami-based deployable structures made of carbon fiber reinforced polymer composites
     year: '2020'
   -X6GqMsAAAAJ:IjCSPb-OGe4C:
@@ -26,9 +26,13 @@ papers:
     title: Computational study for size effect in composites and nanocomposites
     year: '2018'
   -X6GqMsAAAAJ:UeHWp8X0CEIC:
-    citations: 17
+    citations: 18
     title: 'Composite origami: Foldable structures based on tachi-miura-polyhedron origami technique'
     year: '2018'
+  -X6GqMsAAAAJ:UebtZRa9Y70C:
+    citations: 0
+    title: ANALYSIS OF ADDITIVE MANUFACTURED STRUCTURAL JOINTS USING DISCRETE MODEL FOR COM
+    year: Unknown Year
   -X6GqMsAAAAJ:W7OEmFMy1HYC:
     citations: 2
     title: Analysis of additive manufactured structural joints using discrete model for composites (DM4C)
@@ -42,16 +46,16 @@ papers:
     title: A Fast and Efficient Discrete Model for Composites (FastDM4C)
     year: '2023'
   -X6GqMsAAAAJ:eQOLeE2rZwMC:
-    citations: 5
+    citations: 6
     title: To the mesoscale and beyond! capturing complex damage mechanisms in composites via simple, physics-based, discrete mathematical models of fibers and matrix
     year: '2023'
   -X6GqMsAAAAJ:qjMakFHDy7sC:
     citations: 1
-    title: 'FastDM4C: A Fast and Efficient Discrete Model for Composites'
+    title: 'FastDM4C: a Fast and efficient discrete model for composites'
     year: '2023'
   -X6GqMsAAAAJ:roLk4NBRz8UC:
     citations: 1
-    title: INVESTIGATION OF THE EFFECT OF IN-PLANE WAVINESS ON THE MECHANICAL BEHAVIOR OF ADDITIVE MANUFACTURED COMPOSITE LAMINATES
+    title: Investigation of the effect of in-plane waviness on the mechanical behavior of additive manufactured composite laminates
     year: '2023'
   -X6GqMsAAAAJ:u5HHmVD_uO8C:
     citations: 10
