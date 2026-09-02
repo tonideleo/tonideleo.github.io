@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-08-26'
+  last_updated: '2026-09-02'
 papers:
   -X6GqMsAAAAJ:2osOgNQ5qMEC:
     citations: 23
     title: 'Aerogami: Composite origami structures as active aerodynamic control'
     year: '2020'
   -X6GqMsAAAAJ:9yKSN-GCB0IC:
-    citations: 106
+    citations: 108
     title: Origami-based deployable structures made of carbon fiber reinforced polymer composites
     year: '2020'
   -X6GqMsAAAAJ:IjCSPb-OGe4C:
@@ -26,7 +26,7 @@ papers:
     title: Computational study for size effect in composites and nanocomposites
     year: '2018'
   -X6GqMsAAAAJ:UeHWp8X0CEIC:
-    citations: 18
+    citations: 19
     title: 'Composite origami: Foldable structures based on tachi-miura-polyhedron origami technique'
     year: '2018'
   -X6GqMsAAAAJ:UebtZRa9Y70C:
@@ -66,6 +66,6 @@ papers:
     title: Discrete modeling and machine learning assisted calibration of 3d printed carbon fiber reinforced plastics (CFRP) structural joints
     year: '2022'
   -X6GqMsAAAAJ:zYLM7Y9cAGgC:
-    citations: 8
+    citations: 9
     title: A novel discrete, mesoscale modeling framework for the simulation of the damaging and fracturing behavior of composites
     year: '2022'
